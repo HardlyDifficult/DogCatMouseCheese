@@ -1,14 +1,17 @@
 import * as DCL from 'metaverse-api'
 import { Vector3Component } from 'metaverse-api';
 import * as MathHelper from './mathHelper';
-//import * as SceneHelper from './sceneHelper';
+import * as SceneHelper from './sceneHelper';
 import { Dog } from 'components/Dog';
 import { Cat } from 'components/Cat';
 import { Mouse } from 'components/Mouse';
 import { Cheese, ICheeseProps } from 'components/Cheese';
+import { Entrance, IEntranceProps } from 'components/Entrance';
 import { setInterval, clearInterval } from 'timers';
 import { Animation } from 'Animation';
 import { IEntityProps } from 'SharedProperties';
+import { Exit, IExitProps } from 'components/Exit';
+import { ITreeProps, Tree } from 'components/Tree';
 
 export interface IState
 {
@@ -16,18 +19,20 @@ export interface IState
 	dog: IEntityProps,
 	cat: IEntityProps,
 	mouse: IEntityProps,
+	trees: ITreeProps[],
 }
 
-//enum PreyGoal
-//{
-//	Idle,
-//	Sit,
-//	Follow,
-//	GoDrink,
-//	Drinking,
-//}
-
-const cheeseProps: ICheeseProps = { position: { x: 10, y: 0, z: 3 } };
+const cheeseProps: ICheeseProps = {
+	position: { x: 10, y: 0, z: 3 }
+};
+const entranceProps: IEntranceProps = {
+	position: { x: 1.5, y: 0, z: 3 },
+	rotation: { x: 0, y: 270, z: 0 }
+};
+const exitProps: IExitProps = {
+	position: { x: 28, y: 0, z: 20 },
+	rotation: { x: 0, y: 90, z: 0 }
+};
 
 export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 {
@@ -57,16 +62,45 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 				{ animation: Animation.Walk, weight: 0 },
 			]
 		},
+		trees: [],
 	};
 
-	dogInterval: NodeJS.Timer | null = null;
+	dogInterval: NodeJS.Timer | null = null; // TODO we need more
+	grid: boolean[][];
 
 	sceneDidMount()
 	{
+		this.grid = [];
+		for (let x = 0; x < 30; x++)
+		{
+			this.grid.push([]);
+			for (let y = 0; y < 30; y++)
+			{
+				this.grid[x].push(false);
+			}
+		}
+
 		this.subscribeTo("positionChanged", (e) =>
 		{
 			this.setState({ characterPosition: e.position });
 		});
+
+		let trees: ITreeProps[] = [];
+		for (let i = 0; i < Math.random() * 50 + 1; i++)
+		{
+			let position;
+			do
+			{
+				position = { x: Math.round(Math.random() * 30), y: 0, z: Math.round(Math.random() * 30) };
+			} while (!SceneHelper.isInBounds(position) || this.grid[position.x][position.z]);
+			this.grid[position.x][position.z] = true;
+
+			trees.push({
+				position,
+				rotation: { x: 0, y: Math.random() * 360, z: 0 }
+			});
+		}
+		this.setState({ trees });
 
 		this.followPath("dog", [
 			{ x: 5, y: 0, z: 6 },
@@ -77,6 +111,10 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 			{ x: 7, y: 0, z: 9 },
 			{ x: 8, y: 0, z: 9 },
 			{ x: 9, y: 0, z: 9 },
+			{ x: 10, y: 0, z: 9 },
+			{ x: 11, y: 0, z: 9 },
+			{ x: 12, y: 0, z: 9 },
+			{ x: 13, y: 0, z: 9 },
 		]);
 
 		this.followPath("cat", [
@@ -85,6 +123,15 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 			{ x: 15, y: 0, z: 13 },
 			{ x: 15, y: 0, z: 12 },
 			{ x: 14, y: 0, z: 12 },
+			{ x: 14, y: 0, z: 11 },
+			{ x: 14, y: 0, z: 10 },
+			{ x: 14, y: 0, z: 9 },
+			{ x: 13, y: 0, z: 9 },
+			{ x: 12, y: 0, z: 9 },
+			{ x: 11, y: 0, z: 9 },
+			{ x: 10, y: 0, z: 9 },
+			{ x: 9, y: 0, z: 9 },
+			{ x: 8, y: 0, z: 9 },
 		]);
 
 		this.followPath("mouse", [
@@ -100,9 +147,9 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 	{
 		let pathIndex = 0;
 		setInterval(() =>
-		{
+		{ // TODO stop interval when we arrive
 			if (++pathIndex >= path.length)
-			{
+			{ 
 				pathIndex = path.length - 1;
 			}
 			let state: any = {};
@@ -120,7 +167,15 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 			return entity;
 		}
 
+		this.grid[Math.round(entity.position.x)][Math.round(entity.position.z)] = false;
+		if (this.grid[Math.round(targetPosition.x)][Math.round(targetPosition.z)])
+		{ // TODO collision (throw exception?)
+			entity.position.y = 2;
+			this.changeAnimation(entity, Animation.Idle, entityInterval);
+			return entity;
+		}
 		entity.position = targetPosition;
+		this.grid[Math.round(entity.position.x)][Math.round(entity.position.z)] = true;
 		// Look past the target
 		entity.lookAtPosition = MathHelper.add(targetPosition, toTarget); 
 		this.changeAnimation(entity, Animation.Walk, entityInterval);
@@ -172,14 +227,25 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 		}, 1000/60);
 	}
 
+	renderTrees()
+	{
+		return this.state.trees.map((tree) =>
+		{
+			return Tree(tree);
+		});
+	}
+
 	async render()
 	{
 		return (
 			<scene>
+				{Entrance(entranceProps)}
+				{Exit(exitProps)}
+				{Cheese(cheeseProps)}
 				{Dog(this.state.dog)}
 				{Cat(this.state.cat)}
 				{Mouse(this.state.mouse)}
-				{Cheese(cheeseProps)}
+				{this.renderTrees()}
 			</scene>
 		)
 	}

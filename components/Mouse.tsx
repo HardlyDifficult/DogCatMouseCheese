@@ -35,7 +35,7 @@ export const Mouse = (props: IEntityProps) =>
 			}}>
 			<gltf-model
 				id="Mouse"
-				src="art/BlockDog.gltf"
+				src="assets/BlockDog.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
 				scale={.1}
 				skeletalAnimation={[

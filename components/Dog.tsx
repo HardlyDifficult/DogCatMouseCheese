@@ -34,7 +34,7 @@ export const Dog = (props: IEntityProps) =>
 			}}>
 			<gltf-model
 				id="Dog"
-				src="art/BlockDog.gltf"
+				src="assets/BlockDog.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
 				skeletalAnimation={[
 					{

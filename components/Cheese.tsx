@@ -11,7 +11,7 @@ export const Cheese = (props: ICheeseProps) =>
 	return (
 		<gltf-model
 			id="Cheese"
-			src="art/BlockDogBowl.gltf"
+			src="assets/BlockDogBowl.gltf"
 			rotation={{ x: 0, y: 90, z: 0 }}
 			position={props.position}
 		/>
