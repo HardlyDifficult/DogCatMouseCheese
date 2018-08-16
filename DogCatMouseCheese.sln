@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4A9F9CB-F166-4E29-BC5D-C15EE87947C0}"
+	ProjectSection(SolutionItems) = preProject
+		MathHelper.ts = MathHelper.ts
+		scene.tsx = scene.tsx
+		sceneHelper.ts = sceneHelper.ts
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C9A1204-EE05-4086-83C0-2385A6249319}
+	EndGlobalSection
+EndGlobal

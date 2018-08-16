@@ -1,0 +1,4867 @@
+{
+    "accessors": [
+        {
+            "bufferView": 20,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.9999999403953552,
+                0.9999998807907104,
+                1.0
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999998807907104,
+                1.0
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 84,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999997615814209,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 43,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999997615814209,
+                0.9999998211860657,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Idle_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 57,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.5,
+                0.5000000596046448,
+                0.5000000596046448,
+                0.5
+            ],
+            "min": [
+                0.5,
+                0.5000000596046448,
+                0.5000000596046448,
+                0.5
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 33,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.17000006139278412,
+                -0.028694840148091316,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.17000006139278412,
+                -0.028694840148091316,
+                -0.13999997079372406
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 62,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -3.0665634653814777e-07,
+                -3.9053679756761994e-07,
+                -0.7365846037864685,
+                0.6763455271720886
+            ],
+            "min": [
+                -3.5636494999380375e-07,
+                -4.258451440364297e-07,
+                -0.7622143626213074,
+                0.6473247408866882
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 91,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                2.0000000000000027
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_BlockDog_Rig_Walking_time_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 16,
+            "componentType": 5126,
+            "count": 252,
+            "max": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "min": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "accessor_buffer_BlockDog_skin_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 36,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                3.9999999999999956
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_BlockDog_Rig_Idle_time_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 45,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.862645149230957e-09,
+                2.0816681711721685e-17,
+                4.527967085478368e-16,
+                1.0
+            ],
+            "min": [
+                -3.725290298461914e-09,
+                -2.0816681711721685e-17,
+                -4.429982314139991e-16,
+                1.0
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 32,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998211860657,
+                1.0
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 35,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1.0
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -2.7418256109967842e-08,
+                -5.386933707995922e-07,
+                -0.1943484991788864,
+                0.9809325337409973
+            ],
+            "min": [
+                -2.7418256109967842e-08,
+                -5.386933707995922e-07,
+                -0.1943484991788864,
+                0.9809325337409973
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 53,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -3.911171688741888e-07,
+                -5.136371328262612e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "min": [
+                -3.911172825610265e-07,
+                -5.136371328262612e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 55,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.5,
+                0.5000000596046448,
+                0.5000000596046448,
+                0.5
+            ],
+            "min": [
+                0.5,
+                0.5000000596046448,
+                0.5000000596046448,
+                0.5
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 47,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.713250458240509,
+                0.713250458240509,
+                5.776000833179751e-08,
+                5.8277265679862467e-08
+            ],
+            "min": [
+                -0.7071068286895752,
+                -0.706893265247345,
+                -5.810082015500484e-08,
+                -5.777742018153731e-08
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 46,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.30000001192092896,
+                0.6028913855552673,
+                1.8811814328500986e-09
+            ],
+            "min": [
+                0.30000001192092896,
+                0.588434636592865,
+                -2.353868211457666e-09
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 120,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 63,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998807907104,
+                1.0
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 87,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999998211860657,
+                0.9999997615814209,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 34,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -1.7822412701207213e-07,
+                -3.7377984085651406e-07,
+                -0.6087614297866821,
+                0.7933533787727356
+            ],
+            "min": [
+                -1.7822412701207213e-07,
+                -3.7377984085651406e-07,
+                -0.6087614297866821,
+                0.7933533787727356
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 22,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -0.01689687743782997,
+                -0.6986517906188965,
+                -0.016896875575184822,
+                0.7069048285484314
+            ],
+            "min": [
+                -0.10902197659015656,
+                -0.706904947757721,
+                -0.10902196168899536,
+                0.6986517310142517
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 71,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.04361937567591667,
+                7.722552042288555e-10,
+                5.916271916817095e-09,
+                1.0
+            ],
+            "min": [
+                -0.043619394302368164,
+                -8.890223821529457e-16,
+                -5.846117812069451e-09,
+                0.9990482330322266
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 108,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                1.0,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 49,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0523945093154907e-07,
+                0.9000000953674316,
+                2.3842039453825237e-14
+            ],
+            "min": [
+                -8.195638656616211e-08,
+                0.8999999761581421,
+                -1.7180701306074297e-14
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 105,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "min": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 97,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 118,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.1700000762939453,
+                -0.02869480848312378,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.1700000762939453,
+                -0.02869480848312378,
+                -0.13999998569488525
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 40,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -1.3823603239870863e-07,
+                -2.6075599635078106e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "min": [
+                -1.382361034529822e-07,
+                -2.607560247724905e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 113,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.5416752696037292,
+                0.5416752099990845,
+                0.5416752696037292,
+                0.5416752099990845
+            ],
+            "min": [
+                0.45451948046684265,
+                0.45451948046684265,
+                0.45451948046684265,
+                0.45451945066452026
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 15,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0,
+                1.0000001192092896,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 39,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.17000015079975128,
+                0.5138314366340637,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.16999998688697815,
+                0.5138312578201294,
+                -0.13999997079372406
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 61,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.17000006139278412,
+                0.513831377029419,
+                0.14000003039836884
+            ],
+            "min": [
+                0.16999997198581696,
+                0.5138312578201294,
+                0.14000003039836884
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 116,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.5416752696037292,
+                0.5416752099990845,
+                0.5416752696037292,
+                0.5416752099990845
+            ],
+            "min": [
+                0.45451948046684265,
+                0.45451948046684265,
+                0.45451948046684265,
+                0.45451945066452026
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 77,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -0.030843550339341164,
+                -0.7010574340820312,
+                -0.03084353730082512,
+                0.7064337134361267
+            ],
+            "min": [
+                -0.09229595959186554,
+                -0.7064338326454163,
+                -0.09229598939418793,
+                0.7010573148727417
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 69,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0
+            ],
+            "min": [
+                0.9999997615814209,
+                0.9999998211860657,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.17000004649162292,
+                0.5138313174247742,
+                0.14000003039836884
+            ],
+            "min": [
+                0.17000004649162292,
+                0.5138313174247742,
+                0.14000003039836884
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 28,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.5312823057174683,
+                0.5467787981033325,
+                0.5312823057174683,
+                0.5467787981033325
+            ],
+            "min": [
+                0.44836702942848206,
+                0.46662530303001404,
+                0.4483671188354492,
+                0.4666251838207245
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 31,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.5312823057174683,
+                0.5467787981033325,
+                0.5312823057174683,
+                0.5467787981033325
+            ],
+            "min": [
+                0.44836702942848206,
+                0.46662530303001404,
+                0.4483671188354492,
+                0.4666251838207245
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 56,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -0.09999999403953552,
+                0.10000009834766388,
+                0.1700001060962677
+            ],
+            "min": [
+                -0.09999999403953552,
+                0.09999987483024597,
+                0.16999991238117218
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 79,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.17000004649162292,
+                -0.02869478613138199,
+                0.14000003039836884
+            ],
+            "min": [
+                0.16999997198581696,
+                -0.028694836422801018,
+                0.14000003039836884
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 12,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 11,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.891804224385396e-08,
+                -3.0482095780826057e-07,
+                -0.1943484991788864,
+                0.9809325337409973
+            ],
+            "min": [
+                1.891804224385396e-08,
+                -3.0482095780826057e-07,
+                -0.1943484991788864,
+                0.9809325337409973
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 90,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.000000238418579,
+                1.000000238418579,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 67,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -0.14101114869117737,
+                -0.04183556139469147,
+                7.658777434471631e-08
+            ],
+            "min": [
+                -0.14101123809814453,
+                -0.04183565080165863,
+                7.658775302843424e-08
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 73,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.30000001192092896,
+                0.20200589299201965,
+                7.105427357601002e-15
+            ],
+            "min": [
+                0.30000001192092896,
+                0.20200589299201965,
+                7.105427357601002e-15
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 65,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -1.379556664460324e-07,
+                -2.4230945427916595e-07,
+                -0.7365846037864685,
+                0.6763455271720886
+            ],
+            "min": [
+                -1.677238543607018e-07,
+                -2.584848459719069e-07,
+                -0.7622143626213074,
+                0.6473247408866882
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 70,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.3322676295501878e-14,
+                0.20000013709068298,
+                -0.09999993443489075
+            ],
+            "min": [
+                -1.9539925233402755e-14,
+                0.19999992847442627,
+                -0.10000011324882507
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 23,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0,
+                1.0,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 72,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0,
+                0.9999998807907104,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 16,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                7.549516567451064e-15,
+                0.2000000923871994,
+                -0.09999997913837433
+            ],
+            "min": [
+                -8.43769498715119e-15,
+                0.19999997317790985,
+                -0.10000008344650269
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 110,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -2.5007830117829144e-07,
+                -3.374728407834482e-07,
+                -0.5,
+                0.8660253882408142
+            ],
+            "min": [
+                -5.055020437794155e-07,
+                -6.551219939865405e-07,
+                -0.866025447845459,
+                0.5
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 24,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.17000001668930054,
+                -0.02869485132396221,
+                0.14000003039836884
+            ],
+            "min": [
+                0.17000001668930054,
+                -0.02869485132396221,
+                0.14000003039836884
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 86,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.5247569680213928,
+                0.5173404812812805,
+                0.5243588089942932,
+                0.5177386999130249
+            ],
+            "min": [
+                0.47429126501083374,
+                0.48170775175094604,
+                0.4746894836425781,
+                0.4813095033168793
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 14,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -1.6669102933519753e-06,
+                -5.517463819160184e-07,
+                -0.8853177428245544,
+                0.464986652135849
+            ],
+            "min": [
+                -1.7838010535342619e-06,
+                -7.255906666614464e-07,
+                -0.9270122647285461,
+                0.37503108382225037
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 83,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.5247569680213928,
+                0.5173404812812805,
+                0.5243588089942932,
+                0.5177386999130249
+            ],
+            "min": [
+                0.47429129481315613,
+                0.48170775175094604,
+                0.4746894836425781,
+                0.4813095033168793
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 119,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -1.3086898320580076e-07,
+                -2.1801122329634381e-07,
+                -0.5,
+                0.8660253882408142
+            ],
+            "min": [
+                -2.9902545861659746e-07,
+                -4.4879129745822866e-07,
+                -0.866025447845459,
+                0.5
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 18,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.2980380654335022,
+                0.585425615310669,
+                1.9582044874510984e-09
+            ],
+            "min": [
+                0.2980380654335022,
+                0.585425615310669,
+                1.9582044874510984e-09
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 64,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.1700001209974289,
+                0.513831377029419,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.17000001668930054,
+                0.5138312578201294,
+                -0.13999997079372406
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 252,
+            "max": [
+                0.9905964136123657,
+                0.999738872051239
+            ],
+            "min": [
+                0.00026112794876098633,
+                0.011311054229736328
+            ],
+            "name": "accessor_buffer_BlockDog_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 54,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.09999999403953552,
+                0.10000009834766388,
+                0.1700000911951065
+            ],
+            "min": [
+                0.09999999403953552,
+                0.09999987483024597,
+                0.16999991238117218
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 29,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998211860657,
+                1.0
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 99,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -1.5791192709002644e-06,
+                -5.729635290663282e-07,
+                -0.8414225578308105,
+                0.5403777956962585
+            ],
+            "min": [
+                -1.797263735170418e-06,
+                -8.726952955839806e-07,
+                -0.9224750995635986,
+                0.38605669140815735
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 112,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.10000000149011612,
+                0.1000000461935997,
+                0.1700001060962677
+            ],
+            "min": [
+                0.09999998658895493,
+                0.09999987483024597,
+                0.16999995708465576
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 52,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.1700001060962677,
+                -0.02869475819170475,
+                0.14000003039836884
+            ],
+            "min": [
+                0.16999994218349457,
+                -0.02869485504925251,
+                0.14000003039836884
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 93,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -1.9047365640290082e-07,
+                -2.777421173050243e-07,
+                -0.5,
+                0.8660253882408142
+            ],
+            "min": [
+                -4.022637654088612e-07,
+                -5.519566457223846e-07,
+                -0.866025447845459,
+                0.5
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 27,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.10000000149011612,
+                0.1000000610947609,
+                0.1700000762939453
+            ],
+            "min": [
+                0.09999999403953552,
+                0.09999991208314896,
+                0.16999995708465576
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 89,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -5.363041211126074e-08,
+                -4.1161581521009794e-07,
+                -0.32229530811309814,
+                0.9466391801834106
+            ],
+            "min": [
+                -6.366565230564447e-08,
+                -4.2107106423827645e-07,
+                -0.3339103162288666,
+                0.9426048398017883
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 81,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.000000238418579,
+                1.000000238418579,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 68,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.10412780940532684,
+                0.13896453380584717,
+                0.9998200535774231,
+                0.018974050879478455
+            ],
+            "min": [
+                -0.10412505269050598,
+                -0.13896465301513672,
+                0.9846304655075073,
+                0.01868497207760811
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 10,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.1700000762939453,
+                0.5138313174247742,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.1700000762939453,
+                0.5138313174247742,
+                -0.13999997079372406
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 115,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -0.09999998658895493,
+                0.1000000387430191,
+                0.1700001060962677
+            ],
+            "min": [
+                -0.10000000149011612,
+                0.09999987483024597,
+                0.16999994218349457
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 26,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1.0
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Drinking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 76,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                8.940696005765858e-08,
+                0.9000001549720764,
+                2.9753977059954195e-14
+            ],
+            "min": [
+                -1.1920930376163597e-07,
+                0.8999999165534973,
+                -2.2648549702353193e-14
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 30,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -0.09999998658895493,
+                0.1000000461935997,
+                0.17000004649162292
+            ],
+            "min": [
+                -0.09999999403953552,
+                0.09999992698431015,
+                0.16999995708465576
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 48,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999998807907104,
+                1.0
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Idle_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 19,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.7933533787727356,
+                -0.6087613701820374,
+                5.222605281574033e-08,
+                6.199068991463719e-08
+            ],
+            "min": [
+                0.7933533787727356,
+                -0.6087613701820374,
+                5.222605281574033e-08,
+                6.199068991463719e-08
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 66,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998807907104,
+                1.0
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 100,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999998211860657,
+                0.9999998807907104,
+                1.0
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 88,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.1700001358985901,
+                -0.02869478613138199,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.17000004649162292,
+                -0.02869483083486557,
+                -0.13999997079372406
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 60,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                3.9999999999999956
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_BlockDog_Rig_Sitting_time_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 41,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -0.1410110592842102,
+                -0.04183555021882057,
+                7.658779566099838e-08
+            ],
+            "min": [
+                -0.1410112828016281,
+                -0.041835661977529526,
+                7.658774592300688e-08
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 102,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.862645149230957e-09,
+                5.551115123125783e-17,
+                4.440892098500626e-16,
+                1.0
+            ],
+            "min": [
+                -1.862645149230957e-09,
+                -2.0816681711721685e-17,
+                -4.442518401759354e-16,
+                1.0
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 252,
+            "max": [
+                0.6458342671394348,
+                0.8674486875534058,
+                0.23632052540779114
+            ],
+            "min": [
+                -0.93524169921875,
+                0.0,
+                -0.23632052540779114
+            ],
+            "name": "accessor_buffer_BlockDog_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 82,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.10000000149011612,
+                0.10000009089708328,
+                0.1700001209974289
+            ],
+            "min": [
+                0.09999998658895493,
+                0.09999991208314896,
+                0.1699998825788498
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 101,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.734723475976807e-15,
+                0.2000000923871994,
+                -0.09999994933605194
+            ],
+            "min": [
+                -1.915134717478395e-15,
+                0.19999992847442627,
+                -0.10000009089708328
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 50,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.030843563377857208,
+                -0.7064338326454163,
+                0.03084355965256691,
+                0.7071067094802856
+            ],
+            "min": [
+                0.0,
+                -0.7071068286895752,
+                0.0,
+                0.7064337134361267
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 104,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -0.7071068286895752,
+                0.7071068286895752,
+                -5.7601170055932016e-08,
+                -5.7601170055932016e-08
+            ],
+            "min": [
+                -0.7071068286895752,
+                0.7071068286895752,
+                -5.7601170055932016e-08,
+                -5.7601170055932016e-08
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 103,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.30000001192092896,
+                0.5942173600196838,
+                8.862282463439897e-09
+            ],
+            "min": [
+                0.30000001192092896,
+                0.5392816662788391,
+                -8.862282463439897e-09
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 58,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.17000015079975128,
+                -0.02869475819170475,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.16999998688697815,
+                -0.02869485318660736,
+                -0.13999997079372406
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 75,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 42,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.040524572134017944,
+                0.0771598145365715,
+                -0.881948709487915,
+                0.464986652135849
+            ],
+            "min": [
+                -0.040527939796447754,
+                -0.0771612599492073,
+                -0.8853177428245544,
+                0.46321702003479004
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5121,
+            "count": 252,
+            "max": [
+                9,
+                0,
+                0,
+                0
+            ],
+            "min": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "name": "accessor_buffer_BlockDog_skin_0",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                2.0000000000000027
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_BlockDog_Rig_Drinking_time_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 109,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.17000001668930054,
+                -0.02869480848312378,
+                0.14000003039836884
+            ],
+            "min": [
+                0.17000001668930054,
+                -0.02869480848312378,
+                0.14000001549720764
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 85,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -0.09999998658895493,
+                0.10000007599592209,
+                0.1700001060962677
+            ],
+            "min": [
+                -0.10000000149011612,
+                0.09999989718198776,
+                0.16999992728233337
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Sitting_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 10,
+            "max": [
+                1.0000001192092896,
+                0.5675748586654663,
+                0.0,
+                0.0,
+                0.5675749182701111,
+                1.0000001192092896,
+                1.0,
+                0.0,
+                1.6292068494294654e-07,
+                4.2496947116887895e-07,
+                0.0,
+                0.0,
+                0.6000000238418579,
+                0.429999977350235,
+                0.14000026881694794,
+                1.0
+            ],
+            "min": [
+                -1.0000001192092896,
+                -1.0000001192092896,
+                -2.8603456030396046e-06,
+                0.0,
+                -1.0,
+                -1.0,
+                -2.488005293344031e-06,
+                0.0,
+                -1.0,
+                -1.0348657042413834e-08,
+                -1.0,
+                0.0,
+                -0.7020201683044434,
+                -0.8000000715255737,
+                -0.6000000238418579,
+                1.0
+            ],
+            "name": "accessor_buffer_IBM_BlockDog_skin_0",
+            "type": "MAT4"
+        },
+        {
+            "bufferView": 78,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0,
+                1.0,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0,
+                0.9999997615814209,
+                0.9999998211860657
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Sitting_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 37,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                0.1700001060962677,
+                0.5138314366340637,
+                0.14000003039836884
+            ],
+            "min": [
+                0.16999994218349457,
+                0.5138312578201294,
+                0.14000003039836884
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 21,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                5.2735593669694936e-15,
+                0.9000000357627869,
+                9.325873406851315e-15
+            ],
+            "min": [
+                5.2735593669694936e-15,
+                0.9000000357627869,
+                9.325873406851315e-15
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 114,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998211860657,
+                1.0
+            ],
+            "name": "accessor_buffer_Ear.R_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 111,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 378,
+            "max": [
+                251
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_BlockDog_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 252,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "name": "accessor_buffer_BlockDog_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 25,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -3.233641621136485e-07,
+                -5.629299835163692e-07,
+                -0.6087614297866821,
+                0.7933533787727356
+            ],
+            "min": [
+                -3.233641621136485e-07,
+                -5.629299835163692e-07,
+                -0.6087614297866821,
+                0.7933533787727356
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 13,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -0.14101114869117737,
+                -0.04183560609817505,
+                7.658778145014367e-08
+            ],
+            "min": [
+                -0.14101114869117737,
+                -0.04183560609817505,
+                7.658778145014367e-08
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Drinking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 98,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -0.14101117849349976,
+                -0.04183560609817505,
+                7.658776723928895e-08
+            ],
+            "min": [
+                -0.14101117849349976,
+                -0.04183560609817505,
+                7.658775302843424e-08
+            ],
+            "name": "accessor_buffer_Tail_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 74,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -0.4268311858177185,
+                0.9043313264846802,
+                -6.637581861923536e-08,
+                -4.1334235589829404e-08
+            ],
+            "min": [
+                -0.43890947103500366,
+                0.8985313177108765,
+                -6.710304489843111e-08,
+                -4.257227104176309e-08
+            ],
+            "name": "accessor_buffer_Body_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 107,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.030843563377857208,
+                -0.7064338326454163,
+                0.03084355965256691,
+                0.7071004509925842
+            ],
+            "min": [
+                -0.030843563377857208,
+                -0.7071006298065186,
+                -0.03084355965256691,
+                0.7064337134361267
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 51,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.0,
+                1.0,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0,
+                0.9999998211860657,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Idle_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 106,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.4432899320127035e-15,
+                0.9000000953674316,
+                3.552713678800501e-15
+            ],
+            "min": [
+                -1.4432899320127035e-15,
+                0.9000000953674316,
+                -1.1546319456101628e-14
+            ],
+            "name": "accessor_buffer_Head_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 59,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -2.225297492941536e-07,
+                -3.450496990353713e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "min": [
+                -2.2252980613757245e-07,
+                -3.450496990353713e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "name": "accessor_buffer_BackLeg.L_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 38,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -3.068234377678891e-07,
+                -4.29343430141671e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "min": [
+                -3.0682357987643627e-07,
+                -4.29343430141671e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Idle_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 95,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.1700000762939453,
+                0.5138313174247742,
+                -0.13999997079372406
+            ],
+            "min": [
+                0.1700000762939453,
+                0.5138313174247742,
+                -0.13999998569488525
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 17,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.4901161193847656e-08,
+                8.881784197001252e-16,
+                2.4424906541753444e-15,
+                1.0
+            ],
+            "min": [
+                -7.450580596923828e-09,
+                -1.7763568394002505e-15,
+                -3.1086244689504383e-15,
+                1.0
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Drinking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 80,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                -1.295103828624633e-07,
+                -6.335827720249654e-07,
+                -0.32229530811309814,
+                0.9466391801834106
+            ],
+            "min": [
+                -1.442374326643403e-07,
+                -6.495350248769682e-07,
+                -0.3339103162288666,
+                0.9426048398017883
+            ],
+            "name": "accessor_buffer_BackLeg.R_BlockDog_Rig_Sitting_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 96,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                -7.126434553583749e-08,
+                -1.5828052823962935e-07,
+                -0.5,
+                0.8660253882408142
+            ],
+            "min": [
+                -1.9578720866775257e-07,
+                -3.456259207723633e-07,
+                -0.866025447845459,
+                0.5
+            ],
+            "name": "accessor_buffer_FrontLeg.L_BlockDog_Rig_Walking_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 44,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 121,
+            "max": [
+                1.4415552085367267e-15,
+                0.2000001221895218,
+                -0.09999994933605194
+            ],
+            "min": [
+                -1.0685896612017132e-15,
+                0.19999992847442627,
+                -0.10000014305114746
+            ],
+            "name": "accessor_buffer_Mouth_BlockDog_Rig_Idle_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 92,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                0.17000001668930054,
+                0.5138313174247742,
+                0.14000003039836884
+            ],
+            "min": [
+                0.17000001668930054,
+                0.5138313174247742,
+                0.14000001549720764
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Walking_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 94,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0
+            ],
+            "min": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_FrontLeg.R_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 117,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 61,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998211860657,
+                1.0
+            ],
+            "name": "accessor_buffer_Ear.L_BlockDog_Rig_Walking_2",
+            "type": "VEC3"
+        }
+    ],
+    "animations": [
+        {
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 10,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 1,
+                    "target": {
+                        "node": 10,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 2,
+                    "target": {
+                        "node": 10,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 3,
+                    "target": {
+                        "node": 8,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 4,
+                    "target": {
+                        "node": 8,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 5,
+                    "target": {
+                        "node": 8,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 6,
+                    "target": {
+                        "node": 7,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 7,
+                    "target": {
+                        "node": 7,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 8,
+                    "target": {
+                        "node": 7,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 9,
+                    "target": {
+                        "node": 4,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 10,
+                    "target": {
+                        "node": 4,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 11,
+                    "target": {
+                        "node": 2,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 12,
+                    "target": {
+                        "node": 2,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 13,
+                    "target": {
+                        "node": 2,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 14,
+                    "target": {
+                        "node": 3,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 15,
+                    "target": {
+                        "node": 3,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 16,
+                    "target": {
+                        "node": 3,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 17,
+                    "target": {
+                        "node": 11,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 18,
+                    "target": {
+                        "node": 11,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 19,
+                    "target": {
+                        "node": 11,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 20,
+                    "target": {
+                        "node": 6,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 21,
+                    "target": {
+                        "node": 6,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 22,
+                    "target": {
+                        "node": 6,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 23,
+                    "target": {
+                        "node": 5,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 24,
+                    "target": {
+                        "node": 5,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 25,
+                    "target": {
+                        "node": 5,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 26,
+                    "target": {
+                        "node": 9,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 27,
+                    "target": {
+                        "node": 9,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 28,
+                    "target": {
+                        "node": 9,
+                        "path": "scale"
+                    }
+                }
+            ],
+            "name": "Drinking",
+            "samplers": [
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 37
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 13
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 2
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 71
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 43
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 42
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 106
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 55
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 31
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 51
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 115
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 58
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 77
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 0
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 100
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 22
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 49
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 53
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 105
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 73
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 67
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 38
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 62
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 75
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 39
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 11
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 5
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 21
+                },
+                {
+                    "input": 94,
+                    "interpolation": "LINEAR",
+                    "output": 12
+                }
+            ]
+        },
+        {
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 10,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 1,
+                    "target": {
+                        "node": 10,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 2,
+                    "target": {
+                        "node": 8,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 3,
+                    "target": {
+                        "node": 8,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 4,
+                    "target": {
+                        "node": 7,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 5,
+                    "target": {
+                        "node": 7,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 6,
+                    "target": {
+                        "node": 7,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 7,
+                    "target": {
+                        "node": 4,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 8,
+                    "target": {
+                        "node": 4,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 9,
+                    "target": {
+                        "node": 2,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 10,
+                    "target": {
+                        "node": 2,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 11,
+                    "target": {
+                        "node": 2,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 12,
+                    "target": {
+                        "node": 3,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 13,
+                    "target": {
+                        "node": 3,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 14,
+                    "target": {
+                        "node": 3,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 15,
+                    "target": {
+                        "node": 11,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 16,
+                    "target": {
+                        "node": 11,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 17,
+                    "target": {
+                        "node": 6,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 18,
+                    "target": {
+                        "node": 6,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 19,
+                    "target": {
+                        "node": 5,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 20,
+                    "target": {
+                        "node": 5,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 21,
+                    "target": {
+                        "node": 9,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 22,
+                    "target": {
+                        "node": 9,
+                        "path": "rotation"
+                    }
+                }
+            ],
+            "name": "Idle",
+            "samplers": [
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 99
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 113
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 32
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 29
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 82
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 92
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 3
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 118
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 10
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 17
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 16
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 76
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 25
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 87
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 110
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 65
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 14
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 61
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 15
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 40
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 4
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 90
+                },
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 112
+                }
+            ]
+        },
+        {
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 10,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 1,
+                    "target": {
+                        "node": 10,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 2,
+                    "target": {
+                        "node": 10,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 3,
+                    "target": {
+                        "node": 8,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 4,
+                    "target": {
+                        "node": 8,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 5,
+                    "target": {
+                        "node": 8,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 6,
+                    "target": {
+                        "node": 7,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 7,
+                    "target": {
+                        "node": 7,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 8,
+                    "target": {
+                        "node": 7,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 9,
+                    "target": {
+                        "node": 4,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 10,
+                    "target": {
+                        "node": 4,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 11,
+                    "target": {
+                        "node": 4,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 12,
+                    "target": {
+                        "node": 2,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 13,
+                    "target": {
+                        "node": 2,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 14,
+                    "target": {
+                        "node": 2,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 15,
+                    "target": {
+                        "node": 3,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 16,
+                    "target": {
+                        "node": 3,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 17,
+                    "target": {
+                        "node": 3,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 18,
+                    "target": {
+                        "node": 11,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 19,
+                    "target": {
+                        "node": 11,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 20,
+                    "target": {
+                        "node": 11,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 21,
+                    "target": {
+                        "node": 6,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 22,
+                    "target": {
+                        "node": 6,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 23,
+                    "target": {
+                        "node": 6,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 24,
+                    "target": {
+                        "node": 5,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 25,
+                    "target": {
+                        "node": 5,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 26,
+                    "target": {
+                        "node": 5,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 27,
+                    "target": {
+                        "node": 9,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 28,
+                    "target": {
+                        "node": 9,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 29,
+                    "target": {
+                        "node": 9,
+                        "path": "scale"
+                    }
+                }
+            ],
+            "name": "Sitting",
+            "samplers": [
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 33
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 6
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 19
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 59
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 47
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 78
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 45
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 70
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 36
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 48
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 23
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 50
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 46
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 108
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 91
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 74
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 35
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 98
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 41
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 116
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 69
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 85
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 56
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 1
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 96
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 54
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 20
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 80
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 68
+                },
+                {
+                    "input": 81,
+                    "interpolation": "LINEAR",
+                    "output": 44
+                }
+            ]
+        },
+        {
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 10,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 1,
+                    "target": {
+                        "node": 10,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 2,
+                    "target": {
+                        "node": 10,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 3,
+                    "target": {
+                        "node": 8,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 4,
+                    "target": {
+                        "node": 8,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 5,
+                    "target": {
+                        "node": 8,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 6,
+                    "target": {
+                        "node": 7,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 7,
+                    "target": {
+                        "node": 7,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 8,
+                    "target": {
+                        "node": 7,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 9,
+                    "target": {
+                        "node": 4,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 10,
+                    "target": {
+                        "node": 4,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 11,
+                    "target": {
+                        "node": 2,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 12,
+                    "target": {
+                        "node": 2,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 13,
+                    "target": {
+                        "node": 2,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 14,
+                    "target": {
+                        "node": 3,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 15,
+                    "target": {
+                        "node": 3,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 16,
+                    "target": {
+                        "node": 3,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 17,
+                    "target": {
+                        "node": 11,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 18,
+                    "target": {
+                        "node": 11,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 19,
+                    "target": {
+                        "node": 11,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 20,
+                    "target": {
+                        "node": 6,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 21,
+                    "target": {
+                        "node": 6,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 22,
+                    "target": {
+                        "node": 6,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 23,
+                    "target": {
+                        "node": 5,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 24,
+                    "target": {
+                        "node": 5,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 25,
+                    "target": {
+                        "node": 5,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 26,
+                    "target": {
+                        "node": 9,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 27,
+                    "target": {
+                        "node": 9,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 28,
+                    "target": {
+                        "node": 9,
+                        "path": "scale"
+                    }
+                }
+            ],
+            "name": "Walking",
+            "samplers": [
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 119
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 66
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 120
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 114
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 117
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 27
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 107
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 63
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 79
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 86
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 83
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 89
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 88
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 26
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 111
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 109
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 24
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 95
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 52
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 102
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 64
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 30
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 101
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 72
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 34
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 121
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 28
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 57
+                },
+                {
+                    "input": 7,
+                    "interpolation": "LINEAR",
+                    "output": 18
+                }
+            ]
+        }
+    ],
+    "asset": {
+        "copyright": "",
+        "generator": "blendergltf v1.2.0",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 3024,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BlockDog_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3024,
+            "byteOffset": 3024,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BlockDog_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2016,
+            "byteOffset": 6048,
+            "byteStride": 8,
+            "name": "bufferView_buffer_BlockDog_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 760,
+            "byteOffset": 8064,
+            "name": "bufferView_buffer_BlockDog_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 8064,
+            "byteOffset": 8824,
+            "byteStride": 32,
+            "name": "bufferView_buffer_BlockDog_skin_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 640,
+            "byteOffset": 16888,
+            "byteStride": 64,
+            "name": "bufferView_buffer_IBM_BlockDog_skin_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 244,
+            "byteOffset": 17528,
+            "byteStride": 4,
+            "name": "bufferView_buffer_BlockDog_Rig_Drinking_time_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 17772,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 18504,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 19480,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 20212,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 20944,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 21920,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 22652,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 23384,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 24360,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 25092,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 25824,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 26800,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 27532,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 28508,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 29240,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 29972,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 30948,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 31680,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 32412,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 33388,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 34120,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 34852,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 35828,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 36560,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 37292,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 38268,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 39000,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Drinking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 39732,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Drinking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 40708,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Drinking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 484,
+            "byteOffset": 41440,
+            "byteStride": 4,
+            "name": "bufferView_buffer_BlockDog_Rig_Idle_time_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 41924,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 43376,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 45312,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 46764,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 48700,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 50152,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 52088,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Idle_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 53540,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 54992,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 56928,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 58380,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 60316,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Idle_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 61768,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 63220,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 65156,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Idle_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 66608,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 68060,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 69996,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 71448,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 73384,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 74836,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 76772,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Idle_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 78224,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Idle_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 484,
+            "byteOffset": 80160,
+            "byteStride": 4,
+            "name": "bufferView_buffer_BlockDog_Rig_Sitting_time_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 80644,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 82096,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 84032,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 85484,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 86936,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 88872,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 90324,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 91776,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 93712,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 95164,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 96616,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 98552,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 100004,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 101456,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 103392,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 104844,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 106296,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 108232,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 109684,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 111136,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 113072,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 114524,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 115976,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 117912,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 119364,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 120816,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 122752,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 124204,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Sitting_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1936,
+            "byteOffset": 125656,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Sitting_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1452,
+            "byteOffset": 127592,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Sitting_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 244,
+            "byteOffset": 129044,
+            "byteStride": 4,
+            "name": "bufferView_buffer_BlockDog_Rig_Walking_time_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 129288,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 130020,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 130996,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.R_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 131728,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 132460,
+            "byteStride": 16,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 133436,
+            "byteStride": 12,
+            "name": "bufferView_buffer_FrontLeg.L_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 134168,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 134900,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 135876,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Tail_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 136608,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 137340,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Mouth_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 138316,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 139048,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 140024,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Body_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 140756,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 141488,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 142464,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Head_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 143196,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 143928,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 144904,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.R_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 145636,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 146368,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 147344,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.R_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 148076,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 148808,
+            "byteStride": 16,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 149784,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Ear.L_BlockDog_Rig_Walking_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 150516,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Walking_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 976,
+            "byteOffset": 151248,
+            "byteStride": 16,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Walking_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 152224,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BackLeg.L_BlockDog_Rig_Walking_2"
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 152956,
+            "name": "buffer_BlockDog",
+            "uri": "buffer_BlockDog.bin"
+        }
+    ],
+    "images": [
+        {
+            "name": "BlockDogTexture",
+            "uri": "BlockDogTexture.png"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "DogMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 0,
+                    "texCoord": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "BlockDog",
+            "primitives": [
+                {
+                    "attributes": {
+                        "JOINTS_0": 93,
+                        "NORMAL": 104,
+                        "POSITION": 84,
+                        "TEXCOORD_0": 60,
+                        "WEIGHTS_0": 8
+                    },
+                    "indices": 103,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0,
+            "name": "BlockDog",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "skin": 0,
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "children": [
+                0,
+                2
+            ],
+            "name": "BlockDog_Rig",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "children": [
+                3,
+                7,
+                8,
+                9,
+                10,
+                11
+            ],
+            "name": "Body",
+            "rotation": [
+                -0.7071068286895752,
+                0.7071068286895752,
+                -5.7601170055932016e-08,
+                -5.7601170055932016e-08
+            ],
+            "scale": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "translation": [
+                0.30000001192092896,
+                0.6000000238418579,
+                0.0
+            ]
+        },
+        {
+            "children": [
+                4,
+                5,
+                6
+            ],
+            "name": "Head",
+            "rotation": [
+                0.0,
+                -0.7071068286895752,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.9000000953674316,
+                0.0
+            ]
+        },
+        {
+            "name": "Mouth",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.20000004768371582,
+                -0.10000002384185791
+            ]
+        },
+        {
+            "name": "Ear.L",
+            "rotation": [
+                0.5,
+                0.5000000596046448,
+                0.5000000596046448,
+                0.5
+            ],
+            "scale": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "translation": [
+                -0.09999999403953552,
+                0.09999996423721313,
+                0.17000001668930054
+            ]
+        },
+        {
+            "name": "Ear.R",
+            "rotation": [
+                0.5,
+                0.5000000596046448,
+                0.5000000596046448,
+                0.5
+            ],
+            "scale": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "translation": [
+                0.09999999403953552,
+                0.09999996423721313,
+                0.17000001668930054
+            ]
+        },
+        {
+            "name": "Tail",
+            "rotation": [
+                -1.6942301499511814e-06,
+                -7.255904961311899e-07,
+                -0.8853176832199097,
+                0.464986652135849
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1.0
+            ],
+            "translation": [
+                -0.14101117849349976,
+                -0.04183560609817505,
+                7.658776013386159e-08
+            ]
+        },
+        {
+            "name": "FrontLeg.L",
+            "rotation": [
+                -1.3823607503127278e-07,
+                -2.6075599635078106e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.1700000762939453,
+                0.5138313174247742,
+                -0.13999997079372406
+            ]
+        },
+        {
+            "name": "BackLeg.L",
+            "rotation": [
+                -2.2252979192671773e-07,
+                -3.450496990353713e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.1700000762939453,
+                -0.02869480848312378,
+                -0.13999997079372406
+            ]
+        },
+        {
+            "name": "FrontLeg.R",
+            "rotation": [
+                -3.06823494611308e-07,
+                -4.29343430141671e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.17000001668930054,
+                0.5138313174247742,
+                0.14000003039836884
+            ]
+        },
+        {
+            "name": "BackLeg.R",
+            "rotation": [
+                -3.9111722571760765e-07,
+                -5.136371328262612e-07,
+                -0.7071068286895752,
+                0.7071068286895752
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.17000001668930054,
+                -0.02869480848312378,
+                0.14000003039836884
+            ]
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "name": "Texture",
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 30
+            },
+            "name": "Scene",
+            "nodes": [
+                1
+            ]
+        }
+    ],
+    "skins": [
+        {
+            "inverseBindMatrices": 97,
+            "joints": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+            ],
+            "name": "BlockDog",
+            "skeleton": 2
+        }
+    ],
+    "textures": [
+        {
+            "name": "Texture",
+            "sampler": 0,
+            "source": 0
+        }
+    ]
+}

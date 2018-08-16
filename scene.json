@@ -1,0 +1,35 @@
+{
+	"display": {
+		"title": "DogCatMouseCheese"
+	},
+	"owner": "",
+	"contact": {
+		"name": "HardlyDifficult",
+		"email": ""
+	},
+	"scene": {
+		"parcels": [
+			"42,42",
+			"42,43",
+			"42,44",
+			"43,42",
+			"43,43",
+			"43,44",
+			"44,42",
+			"44,43",
+			"44,44"
+		],
+		"base": "42,42"
+	},
+	"communications": {
+		"type": "webrtc",
+		"signalling": "https://rendezvous.decentraland.org"
+	},
+	"policy": {
+		"fly": true,
+		"voiceEnabled": true,
+		"blacklist": [],
+		"teleportPosition": "0,0,0"
+	},
+	"main": "scene.js"
+}
