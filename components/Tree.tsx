@@ -11,7 +11,6 @@ export const Tree = (props: ITreeProps) =>
 {
 	return (
 		<gltf-model
-			id="Tree"
 			position={props.position}
 			src="assets/BlobMonster/BlobMonster.gltf"
 			rotation={props.rotation}

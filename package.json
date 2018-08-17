@@ -13,6 +13,7 @@
     "metaverse-api": "latest"
   },
   "dependencies": {
+    "a-star": "^0.2.0",
     "babylon": "^6.18.0",
     "babylonjs": "^3.2.0"
   }

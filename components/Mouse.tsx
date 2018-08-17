@@ -23,6 +23,7 @@ export const Mouse = (props: IEntityProps) =>
 
 	return (
 		<entity
+			id={props.id + "parent"}
 			position={props.position}
 			lookAt={props.lookAtPosition}
 			transition={{
@@ -34,10 +35,10 @@ export const Mouse = (props: IEntityProps) =>
 				}
 			}}>
 			<gltf-model
-				id="Mouse"
+				id={props.id}
 				src="assets/BlockDog.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
-				scale={.1}
+				scale={1}
 				skeletalAnimation={[
 					{
 						clip: "Idle",

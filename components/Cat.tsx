@@ -23,6 +23,7 @@ export const Cat = (props: IEntityProps) =>
 
 	return (
 		<entity
+			id={props.id + "parent"}
 			position={props.position}
 			lookAt={props.lookAtPosition}
 			transition={{
