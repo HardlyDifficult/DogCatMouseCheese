@@ -1,8 +1,10 @@
-import * as MathHelper from './mathHelper';
-import { IEntityProps } from "SharedProperties";
-import { Animation } from "Animation";
+import * as MathHelper from './MathHelper';
+import { IAnimalProps } from "./SharedProperties";
+import { Animation } from "./Animation";
 import { Vector3Component } from 'metaverse-api';
 import { setInterval, clearInterval } from 'timers';
+
+// TODO animation speeds
 
 export enum Action
 {
@@ -15,7 +17,7 @@ export enum Action
 	Kill,
 }
 
-export function walkTowards(entity: IEntityProps, targetPosition: Vector3Component, grid: boolean[][]): NodeJS.Timer | null
+export function walkTowards(entity: IAnimalProps, targetPosition: Vector3Component, grid: boolean[][]): NodeJS.Timer | null
 {
 	const toTarget = MathHelper.subtract(targetPosition, entity.position);
 	if (MathHelper.isZero(toTarget))
@@ -25,9 +27,8 @@ export function walkTowards(entity: IEntityProps, targetPosition: Vector3Compone
 
 	grid[Math.round(entity.position.x)][Math.round(entity.position.z)] = false;
 	if (grid[Math.round(targetPosition.x)][Math.round(targetPosition.z)])
-	{ // TODO collision (throw exception?)
-		entity.position.y = 2;
-		return changeAnimation(entity, Animation.Idle);
+	{ 
+		throw new Error("Space occupied, can't walk there.");
 	}
 	entity.position = targetPosition;
 	grid[Math.round(entity.position.x)][Math.round(entity.position.z)] = true;
@@ -36,16 +37,14 @@ export function walkTowards(entity: IEntityProps, targetPosition: Vector3Compone
 	return changeAnimation(entity, Animation.Walk);
 }
 
-export function stopWalking(entity: IEntityProps): NodeJS.Timer | null
+export function stopWalking(entity: IAnimalProps): NodeJS.Timer | null
 {
 	return changeAnimation(entity, Animation.Idle);
 }
 
-function changeAnimation(entity: IEntityProps, animation: Animation): NodeJS.Timer | null
+function changeAnimation(entity: IAnimalProps, animation: Animation): NodeJS.Timer | null
 {
-	//console.log(animation.toString());
-	// x seconds = fps * delta;
-	const animationDeltaPerFrame = .01;
+	const animationDeltaPerFrame = .5 / (1000/60);
 	const interval = setInterval(() =>
 	{
 		let isDone = true;

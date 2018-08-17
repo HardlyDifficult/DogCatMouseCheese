@@ -5,14 +5,42 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4A9F9CB-F166-4E29-BC5D-C15EE87947C0}"
 	ProjectSection(SolutionItems) = preProject
-		MathHelper.ts = MathHelper.ts
+		config.json = config.json
 		scene.tsx = scene.tsx
-		sceneHelper.ts = sceneHelper.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{109B54CE-0685-4497-B0E3-496ADB45458A}"
+	ProjectSection(SolutionItems) = preProject
+		components\Cat.tsx = components\Cat.tsx
+		components\Cheese.tsx = components\Cheese.tsx
+		components\Dog.tsx = components\Dog.tsx
+		components\Entrance.tsx = components\Entrance.tsx
+		components\Exit.tsx = components\Exit.tsx
+		components\Fence.tsx = components\Fence.tsx
+		components\House.tsx = components\House.tsx
+		components\Mouse.tsx = components\Mouse.tsx
+		components\Tree.tsx = components\Tree.tsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ts", "ts", "{5EBC9F77-A516-4AB6-9807-5D87597156A5}"
+	ProjectSection(SolutionItems) = preProject
+		ts\Actions.ts = ts\Actions.ts
+		ts\Animation.ts = ts\Animation.ts
+		ts\BehaviorManager.ts = ts\BehaviorManager.ts
+		ts\MathHelper.ts = ts\MathHelper.ts
+		ts\PredatorBehaviorManager.ts = ts\PredatorBehaviorManager.ts
+		ts\PreyBehaviorManager.ts = ts\PreyBehaviorManager.ts
+		ts\SceneHelper.ts = ts\SceneHelper.ts
+		ts\SharedProperties.ts = ts\SharedProperties.ts
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{109B54CE-0685-4497-B0E3-496ADB45458A} = {F4A9F9CB-F166-4E29-BC5D-C15EE87947C0}
+		{5EBC9F77-A516-4AB6-9807-5D87597156A5} = {F4A9F9CB-F166-4E29-BC5D-C15EE87947C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C9A1204-EE05-4086-83C0-2385A6249319}

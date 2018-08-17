@@ -2,5 +2,16 @@
 	"trees": {
 		"min": 6,
 		"max": 20
-	}
+	},
+	"animalTypes": {
+		"predator": "Dog",
+		"prey": "Cat"
+	},
+	"speeds": {
+		"predatorPatrol": 500,
+		"predatorAttack": 500,
+		"preySneak": 500,
+		"preySprint": 500
+	},
+	"patrolRadius": 15
 }

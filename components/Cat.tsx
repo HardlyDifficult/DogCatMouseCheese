@@ -1,8 +1,8 @@
 import * as DCL from 'metaverse-api'
-import { Animation } from 'Animation';
-import { IEntityProps } from 'SharedProperties';
+import { Animation } from '../ts/Animation';
+import { IAnimalProps } from '../ts/SharedProperties';
 
-export const Cat = (props: IEntityProps) =>
+export const Cat = (props: IAnimalProps) =>
 {
 	// TODO is this copy paste too?
 	let idleWeight = 0;

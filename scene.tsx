@@ -1,117 +1,63 @@
 const config = require('./config.json');
 import * as DCL from 'metaverse-api';
 import { Vector3Component } from 'metaverse-api';
-import * as MathHelper from './mathHelper';
-import * as SceneHelper from './sceneHelper';
+import * as MathHelper from 'ts/MathHelper';
+import * as SceneHelper from 'ts/SceneHelper';
 import { Dog } from 'components/Dog';
 import { Cat } from 'components/Cat';
 import { Mouse } from 'components/Mouse';
 import { Cheese, ICheeseProps } from 'components/Cheese';
-import { Entrance, IEntranceProps } from 'components/Entrance';
-import { Animation } from 'Animation';
-import { IEntityProps } from 'SharedProperties';
-import { Exit, IExitProps } from 'components/Exit';
-import { ITreeProps, Tree } from 'components/Tree';
-import { BehaviorManager, PreyBehaviorManager } from 'Behaviors';
+import { Entrance } from 'components/Entrance';
+import { Animation } from 'ts/Animation';
+import { IAnimalProps, ISceneryProps, AnimalType } from 'ts/SharedProperties';
+import { Exit } from 'components/Exit';
+import { Tree } from 'components/Tree';
+import { BehaviorManager } from 'ts/BehaviorManager';
+import { House } from 'components/House';
+import { Fence } from 'components/Fence';
+import { PreyBehaviorManager } from 'ts/PreyBehaviorManager';
+import { PredatorBehaviorManager } from 'ts/PredatorBehaviorManager';
 
-// TODO can we arrive (slow down walk animation before stop moving
+// TODO refactor math helper
+// TODO config:PredatorPatrolSpeed, PredatorAttackSpeed, PreySneakSpeed, PreyRunSpeed
+// TODO visually adjust movement speeds
+// TODO collide before standing on-top of the cheese.
 
-export interface IState
+export default class DogCatMouseCheese extends DCL.ScriptableScene
 {
-	characterPosition: Vector3Component,
-	dog: IEntityProps,
-	cat: IEntityProps,
-	mice: IEntityProps[],
-	trees: ITreeProps[],
-}
-
-const cheeseProps: ICheeseProps = {
-	position: { x: 10, y: 0, z: 3 }
-};
-const entranceProps: IEntranceProps = {
-	position: { x: 2, y: 0, z: 3 },
-	rotation: { x: 0, y: 270, z: 0 }
-};
-const exitProps: IExitProps = {
-	position: { x: 28, y: 0, z: 20 },
-	rotation: { x: 0, y: 90, z: 0 }
-};
-
-export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
-{
-	state = {
-		characterPosition: { x: 0, y: 0, z: 0 },
-		dog: {
-			id: "Dog",
-			position: { x: 1, y: 0, z: 15 },
-			lookAtPosition: { x: 5, y: 0, z: 6 },
-			animationWeights: [
-				{ animation: Animation.Idle, weight: 1 },
-				{ animation: Animation.Walk, weight: 0 },
-			]
-		},
-		cat: {
-			id: "Cat",
-			position: { x: 29, y: 0, z: 15 },
-			lookAtPosition: { x: 15, y: 0, z: 14 },
-			animationWeights: [
-				{ animation: Animation.Idle, weight: 1 },
-				{ animation: Animation.Walk, weight: 0 },
-			]
-		},
-		mice: new Array<IEntityProps>(),
-		trees: [],
-	};
-
+	// Data
+	state: {
+		characterPosition: Vector3Component,
+		animals: IAnimalProps[],
+		trees: ISceneryProps[],
+		cheeseProps: ICheeseProps,
+	} = {
+			characterPosition: { x: 0, y: 0, z: 0 },
+			animals: [],
+			trees: [],
+			cheeseProps: {
+				position: { x: 10, y: 0, z: 3 },
+				isVisible: true,
+			},
+		};
 	objectCounter = 0;
-	preyBehavior: BehaviorManager | null = null;
+	behaviors: BehaviorManager[] = [];
 	grid: boolean[][] = [];
 
+	// Init
 	sceneDidMount()
 	{
 		this.createGrid();
 		this.spawnTrees();
-		this.subscribeTo("positionChanged", (e) =>
-		{
-			this.setState({ characterPosition: e.position });
-		});
-		this.eventSubscriber.on("Entrance_click", () =>
-		{
-			if (this.grid[Math.round(entranceProps.position.x)][Math.round(entranceProps.position.z)])
-			{ // Space is occupied, can't spawn
-				return;
-			}
-			this.grid[Math.round(entranceProps.position.x)][Math.round(entranceProps.position.z)] = true;
-
-			let mice = this.state.mice.slice();
-			const mouse = {
-				id: "Mouse" + this.objectCounter++,
-				position: entranceProps.position, 
-				lookAtPosition: MathHelper.add(entranceProps.position, { x: 0, y: 0, z: 1 }),
-				animationWeights: [
-					{ animation: Animation.Idle, weight: 1 },
-					{ animation: Animation.Walk, weight: 0 },
-				]
-			};
-			mice.push(mouse);
-			this.setState({ mice });
-
-			this.preyBehavior = new PreyBehaviorManager(this.grid, mouse, cheeseProps.position, exitProps.position, () =>
-			{
-				this.setState({ mice: this.state.mice });
-			});
-			this.eventSubscriber.on(mouse.id + "_click", () =>
-			{
-				if (this.preyBehavior)
-				{
-					this.preyBehavior.onClick();
-				}
-			});
-		});
-		//this.followPath("dog", { x: 29, y: 0, z: 15 });
-		//this.followPath("cat", { x: 1, y: 0, z: 15 });
+		this.subscribeTo("positionChanged", e => this.onPositionChanged(e));
+		this.eventSubscriber.on("House_click", e => this.onHouseClick());
+		this.eventSubscriber.on("Entrance_click", e => this.onEntranceClick());
+		this.eventSubscriber.on("Exit_click", e => this.onExitClick());
+		this.eventSubscriber.on('captureCheese', e => this.onCaptureCheese());
+		this.eventSubscriber.on('mouseEscape', e => this.onMouseEscape(e));
+		this.eventSubscriber.on('chase', e => this.onChase(e));
+		this.eventSubscriber.on('caught', e => this.onCaught(e));
 	}
-
 	createGrid()
 	{
 		this.grid = [];
@@ -123,11 +69,11 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 				this.grid[x].push(false);
 			}
 		}
+		SceneHelper.updateGridWithStaticScenery(this.grid);
 	}
-
 	spawnTrees()
 	{
-		let trees: ITreeProps[] = [];
+		let trees: ISceneryProps[] = [];
 		const range: number = config.trees.max - config.trees.min;
 		for (let i = 0; i < Math.random() * range + config.trees.min; i++)
 		{
@@ -135,7 +81,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 			do
 			{
 				position = { x: Math.round(Math.random() * 30), y: 0, z: Math.round(Math.random() * 30) };
-			} while (!SceneHelper.isInBounds(position) || this.grid[position.x][position.z] || this.isSceneryPosition(position));
+			} while (!SceneHelper.isInBounds(position) || this.grid[position.x][position.z] || SceneHelper.isSceneryPosition(position));
 			this.grid[position.x][position.z] = true;
 
 			trees.push({
@@ -146,13 +92,128 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 		this.setState({ trees });
 	}
 
-	isSceneryPosition(position: Vector3Component)
+	// Events
+	onPositionChanged(e: ({ position: Vector3Component })) 
 	{
-		return MathHelper.inSphere(position, cheeseProps.position, 2)
-			|| MathHelper.inSphere(position, entranceProps.position, 3)
-			|| MathHelper.inSphere(position, exitProps.position, 3);
+		this.setState({ characterPosition: e.position });
+	}
+	onEntranceClick()
+	{
+		const animal = this.spawnAnimal(
+			config.animalTypes.prey,
+			SceneHelper.entranceProps.position,
+			MathHelper.add(SceneHelper.entranceProps.position, { x: 0, y: 0, z: 1 }));
+		if (animal)
+		{
+			this.behaviors.push(new PreyBehaviorManager(
+				this.eventSubscriber,
+				this.grid,
+				animal,
+				this.state.cheeseProps.position,
+				SceneHelper.exitProps.position,
+				() =>
+				{
+					this.setState({ animals: this.state.animals });
+				}));
+		}
+	}
+	onExitClick()
+	{ // Reset the scene
+		for (const animal of this.state.animals.slice())
+		{
+			this.despawn(animal);
+		}
+		this.spawnTrees();
+	}
+	onHouseClick()
+	{
+		const animal = this.spawnAnimal(
+			config.animalTypes.predator,
+			SceneHelper.houseProps.position,
+			MathHelper.add(SceneHelper.houseProps.position, { x: 0, y: 0, z: 1 }));
+		if (animal)
+		{
+			this.behaviors.push(new PredatorBehaviorManager(this.eventSubscriber, this.grid, animal, () =>
+			{
+				this.setState({ animals: this.state.animals });
+			}, this.state.animals));
+		}
+	}
+	async onCaptureCheese()
+	{
+		let cheeseProps = this.state.cheeseProps;
+		cheeseProps.isVisible = false;
+		this.setState({ cheeseProps: cheeseProps });
+		await MathHelper.sleep(2000);
+		cheeseProps.isVisible = true;
+		this.setState({ cheeseProps: cheeseProps });
+	}
+	async onMouseEscape(mouse: IAnimalProps)
+	{
+		await MathHelper.sleep(1000);
+		this.despawn(mouse);
+	}
+	onChase(prey: IAnimalProps)
+	{
+		const behavior = this.behaviors.find((b) => b.animalProps == prey);
+		if (behavior instanceof PreyBehaviorManager)
+		{
+			behavior.onSpotted();
+		}
+	}
+	onCaught(prey: IAnimalProps)
+	{
+		this.despawn(prey);
 	}
 
+	// Helper methods
+	spawnAnimal(animalKey: keyof typeof AnimalType, position: Vector3Component, lookAtPosition: Vector3Component): IAnimalProps | null
+	{
+		if (this.grid[Math.round(position.x)][Math.round(position.z)])
+		{ // Space is occupied, can't spawn
+			return null;
+		}
+		this.grid[Math.round(position.x)][Math.round(position.z)] = true;
+
+		let animals = this.state.animals.slice();
+		const animal = {
+			id: "Animal" + this.objectCounter++,
+			animalType: AnimalType[animalKey],
+			position,
+			lookAtPosition,
+			animationWeights: [
+				{ animation: Animation.Idle, weight: 1 },
+				{ animation: Animation.Walk, weight: 0 },
+			]
+		};
+		animals.push(animal);
+		this.setState({ animals });
+		this.eventSubscriber.on(animal.id + "_click", () =>
+		{
+			let behavior = this.behaviors.find((b) => b.animalProps == animal);
+			if (behavior)
+			{
+				behavior.onClick();
+			}
+		});
+
+		return animal;
+	}
+	despawn(animal: IAnimalProps)
+	{
+		console.trace();
+		this.grid[Math.round(animal.position.x)][Math.round(animal.position.z)] = false;
+		const behavior = this.behaviors.find((b) => b.animalProps == animal);
+		if (behavior)
+		{
+			behavior.stop();
+		}
+		let animals = this.state.animals;
+		animals.splice(animals.findIndex((a) => a == animal), 1);
+		this.setState({ animals });
+	}
+
+	// Render
 	renderTrees()
 	{
 		return this.state.trees.map((tree) =>
@@ -160,26 +221,39 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene<any, IState>
 			return Tree(tree);
 		});
 	}
-
-	renderMice()
+	renderFence()
 	{
-		return this.state.mice.map((mouse) =>
+		return SceneHelper.fenceProps.map((fence) =>
 		{
-			return Mouse(mouse);
+			return Fence(fence);
 		});
 	}
-
+	renderAnimals()
+	{
+		return this.state.animals.map((animal) =>
+		{
+			switch (animal.animalType)
+			{
+				case AnimalType.Mouse:
+					return Mouse(animal);
+				case AnimalType.Cat:
+					return Cat(animal);
+				case AnimalType.Dog:
+					return Dog(animal);
+			}
+		});
+	}
 	async render()
 	{
 		return (
 			<scene>
-				{Entrance(entranceProps)}
-				{Exit(exitProps)}
+				{Entrance(SceneHelper.entranceProps)}
+				{Exit(SceneHelper.exitProps)}
+				{House(SceneHelper.houseProps)}
+				{this.renderFence()}
 				{this.renderTrees()}
-				{Cheese(cheeseProps)}
-				{Dog(this.state.dog)}
-				{Cat(this.state.cat)}
-				{this.renderMice()};
+				{Cheese(this.state.cheeseProps)}
+				{this.renderAnimals()}
 			</scene>
 		)
 	}

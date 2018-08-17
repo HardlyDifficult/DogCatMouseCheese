@@ -1,8 +1,8 @@
 import * as DCL from 'metaverse-api'
-import { Animation } from 'Animation';
-import { IEntityProps } from 'SharedProperties';
+import { Animation } from '../ts/Animation';
+import { IAnimalProps } from '../ts/SharedProperties';
 
-export const Mouse = (props: IEntityProps) =>
+export const Mouse = (props: IAnimalProps) =>
 {
 	// TODO is this copy paste too?
 	let idleWeight = 0;
@@ -38,7 +38,7 @@ export const Mouse = (props: IEntityProps) =>
 				id={props.id}
 				src="assets/BlockDog.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
-				scale={1}
+				scale={.1}
 				skeletalAnimation={[
 					{
 						clip: "Idle",

@@ -1,13 +1,7 @@
 import * as DCL from 'metaverse-api'
-import { Vector3Component } from 'metaverse-api';
+import { ISceneryProps } from '../ts/SharedProperties';
 
-export interface IEntranceProps
-{
-	position: Vector3Component,
-	rotation: Vector3Component,
-}
-
-export const Entrance = (props: IEntranceProps) =>
+export const Entrance = (props: ISceneryProps) =>
 {
 	return (
 		<gltf-model

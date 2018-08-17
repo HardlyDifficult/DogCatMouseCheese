@@ -4,10 +4,16 @@ import { Vector3Component } from 'metaverse-api';
 export interface ICheeseProps
 {
 	position: Vector3Component,
+	isVisible: boolean
 }
 
 export const Cheese = (props: ICheeseProps) =>
 {
+	if (!props.isVisible)
+	{
+		return;
+	}
+
 	return (
 		<gltf-model
 			id="Cheese"
