@@ -96,11 +96,15 @@ export class PredatorBehaviorManager extends BehaviorManager
 			emitEvent("caughtPrey", animal);
 			this.animalProps.lookAtPosition = animal.position;
 			this.changeAnimation(Animation.Drink);
-			await sleep(2000);
+			await sleep(500);
+			this.animalProps.scale += .25;
+			await sleep(1500);
 			this.changeAnimation(Animation.Idle);
 			await sleep(500);
 			this.patrol();
-		}, () =>
+			await sleep(5000);
+			this.animalProps.scale -= .25;
+			}, () =>
 			{ // It got away
 			this.patrol()
 			}, 1);

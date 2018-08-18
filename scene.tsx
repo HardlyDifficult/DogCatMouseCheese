@@ -203,6 +203,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				{ animation: Animation.Sit, weight: 0 },
 			],
 			isDead: false,
+			scale: 1,
 		};
 		this.setState({ animals: [...this.state.animals, animal] });
 		this.eventSubscriber.on(animal.id + "_click", () =>

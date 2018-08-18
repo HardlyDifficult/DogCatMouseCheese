@@ -22,6 +22,7 @@ export const Dog = (props: IAnimalProps) =>
 				id={props.id}
 				src="assets/BlockDog.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
+				scale={props.scale}
 				skeletalAnimation={[
 					{
 						clip: "Idle",
@@ -40,6 +41,11 @@ export const Dog = (props: IAnimalProps) =>
 						weight: weights.drink,
 					}
 				]}
+				transition={{
+					scale: {
+						duration: 2000
+					}
+				}}
 			/>
 		</entity>
 	)

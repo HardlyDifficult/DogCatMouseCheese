@@ -21,7 +21,7 @@ export const Mouse = (props: IAnimalProps) =>
 				id={props.id}
 				src="assets/BlockDog.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
-				scale={.1}
+				scale={.1 * props.scale}
 				skeletalAnimation={[
 					{
 						clip: "Idle",
@@ -40,6 +40,11 @@ export const Mouse = (props: IAnimalProps) =>
 						weight: weights.drink,
 					}
 				]}
+				transition={{
+					scale: {
+						duration: 2000
+					}
+				}}
 			/>
 		</entity>
 	)

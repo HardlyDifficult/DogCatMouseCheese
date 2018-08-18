@@ -43,6 +43,7 @@ export interface IAnimalProps
 	lookAtPosition: Vector3Component,
 	animationWeights: { animation: Animation, weight: number }[],
 	isDead: boolean,
+	scale: number,
 }
 
 export function getAnimationWeights(animalProps: IAnimalProps): { idle: number, walk: number, sit: number, drink: number }
