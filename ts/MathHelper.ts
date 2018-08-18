@@ -16,7 +16,7 @@ export function lengthSquared(a: Vector3Component): number
 }
 export function isZero(a: Vector3Component): boolean
 {
-	return a.x == 0 && a.y == 0 && a.z == 0;
+	return a.x <= 0.01 && a.y <= 0.01 && a.z <= 0.01;
 }
 export function equals(a: Vector3Component | null, b: Vector3Component | null): boolean
 {
@@ -46,14 +46,14 @@ export function inSphere(position: Vector3Component, target: Vector3Component, r
 
 // Pathfinding
 export function calcPath(startingPosition: Vector3Component, targetPosition: Vector3Component,
-	isValidPosition: (position: Vector3Component) => boolean): Vector3Component[]
+	isValidPosition: (position: Vector3Component) => boolean, maxDistanceFromEnd: number = 0): Vector3Component[]
 {
 	targetPosition = round(targetPosition);
 	const results = aStar({
 		start: round(startingPosition),
 		isEnd: (n: Vector3Component): boolean =>
 		{
-			return equals(n, targetPosition);
+			return inSphere(n, targetPosition, maxDistanceFromEnd + 1);
 		},
 		neighbor: (x: Vector3Component): Vector3Component[] =>
 		{

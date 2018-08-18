@@ -9,11 +9,11 @@ function renderBase(props: IBaitProps)
 	}
 
 	return (
-		<box scale={{ x: 1, y: .1, z: 1 }} />
+		<box scale={{ x: 1, y: .1, z: 1 }} color="#009900" />
 	);
 }
 
-export const Cheese = (props: IBaitProps) =>
+export const Catnip = (props: IBaitProps) =>
 {
 	return (
 		<entity
@@ -21,7 +21,7 @@ export const Cheese = (props: IBaitProps) =>
 		>
 			{renderBase(props)}
 			<gltf-model
-				id="Cheese"
+				id="Catnip"
 				src="assets/BlockDogBowl.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
 			/>

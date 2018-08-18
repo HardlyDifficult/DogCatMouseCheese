@@ -1,21 +1,26 @@
 const config = require('../config.json');
 import { Vector3Component, EventSubscriber } from "metaverse-api";
-import { IAnimalProps } from "./SharedProperties";
+import { IAnimalProps, Animation } from "./SharedProperties";
 import * as MathHelper from './MathHelper';
 import * as SceneHelper from './SceneHelper';
 import { BehaviorManager } from "./BehaviorManager";
 import { clearInterval, setInterval } from "timers";
+import { changeAnimation } from "ts/Actions";
 
 export class PredatorBehaviorManager extends BehaviorManager
 {
-	preyList: IAnimalProps[];
-	predatorInterval: NodeJS.Timer | null = null;
+	getPreyList: () => IAnimalProps[];
 	startingPosition: Vector3Component;
+	predatorInterval: NodeJS.Timer | null = null;
 
-	constructor(eventSubscriber: EventSubscriber, grid: boolean[][], entity: IAnimalProps, onStateChange: () => void, preyList: IAnimalProps[])
+	constructor(eventSubscriber: EventSubscriber,
+		grid: boolean[][],
+		entity: IAnimalProps,
+		onStateChange: () => void,
+		getPreyList: () => IAnimalProps[])
 	{
 		super(eventSubscriber, grid, entity, onStateChange);
-		this.preyList = preyList;
+		this.getPreyList = getPreyList;
 		this.startingPosition = entity.position;
 		this.patrol();
 	}
@@ -26,16 +31,20 @@ export class PredatorBehaviorManager extends BehaviorManager
 		do
 		{
 			targetPosition = SceneHelper.randomPosition();
-		} while (!SceneHelper.isInBounds(targetPosition) || SceneHelper.isSceneryPosition(targetPosition)
+		} while (!SceneHelper.isPositionAvailable(this.grid, targetPosition)
 			|| MathHelper.lengthSquared(MathHelper.subtract(this.startingPosition, targetPosition)) > config.patrolRadius * config.patrolRadius);
 
 		const patrolAgain = async () =>
 		{
-			this.stop();
+			if (this.walkInterval)
+			{
+				clearInterval(this.walkInterval);
+			}
+			this.walkInterval = changeAnimation(this.animalProps, Animation.Sit);
 			await MathHelper.sleep(1500);
 			this.patrol();
 		}
-		this.followPath(() => targetPosition, 500, patrolAgain, patrolAgain);
+		this.followPath(() => targetPosition, config.speeds.predatorPatrol, patrolAgain, patrolAgain);
 
 		if (this.predatorInterval)
 		{
@@ -57,7 +66,7 @@ export class PredatorBehaviorManager extends BehaviorManager
 
 	lookForPrey(radius: number): IAnimalProps | null
 	{
-		for (const prey of this.preyList)
+		for (const prey of this.getPreyList())
 		{
 			if (prey.animalType == this.animalProps.animalType)
 			{
@@ -66,6 +75,7 @@ export class PredatorBehaviorManager extends BehaviorManager
 			const distanceSquared = MathHelper.lengthSquared(MathHelper.subtract(prey.position, this.animalProps.position));
 			if (distanceSquared <= radius * radius)
 			{
+				console.log("Spotted!");
 				return prey;
 			}
 		}
@@ -73,15 +83,34 @@ export class PredatorBehaviorManager extends BehaviorManager
 		return null;
 	}
 
-	chase(entity: IAnimalProps)
+	chase(animal: IAnimalProps)
 	{
-		this.eventSubscriber.emit("chase", entity);
-		this.followPath(() => entity.position, 300, () =>
+		this.eventSubscriber.emit("startChasingPrey", animal);
+		this.followPath(() =>
 		{
-			this.eventSubscriber.emit("caught", entity);
+			if (animal.isDead)
+			{
+				return null;
+			}
+			console.log(animal.position);
+			return animal.position;
+		}, config.speeds.predatorAttack, () =>
+		{
+			console.log("caught prey");
+			this.eventSubscriber.emit("caughtPrey", animal);
 		}, () =>
 			{ // It got away
-				this.patrol()
-			});
+			console.log("got away");
+			this.patrol()
+			}, 2);
+	}
+
+	stop()
+	{
+		super.stop();
+		if (this.predatorInterval)
+		{
+			clearInterval(this.predatorInterval);
+		}
 	}
 }

@@ -1,26 +1,9 @@
 import * as DCL from 'metaverse-api'
-import { Animation } from '../ts/Animation';
-import { IAnimalProps } from '../ts/SharedProperties';
+import { IAnimalProps, getAnimationWeights } from '../ts/SharedProperties';
 
 export const Mouse = (props: IAnimalProps) =>
 {
-	// TODO is this copy paste too?
-	let idleWeight = 0;
-	let walkWeight = 0;
-	let sitWeight = 0;
-	for (const animation of props.animationWeights)
-	{
-		switch (animation.animation)
-		{
-			case Animation.Idle:
-				idleWeight = animation.weight;
-				break;
-			case Animation.Walk:
-				walkWeight = animation.weight;
-				break;
-		}
-	}
-
+	const weights = getAnimationWeights(props);
 	return (
 		<entity
 			id={props.id + "parent"}
@@ -28,10 +11,10 @@ export const Mouse = (props: IAnimalProps) =>
 			lookAt={props.lookAtPosition}
 			transition={{
 				position: {
-					duration: 500
+					duration: props.moveDuration
 				},
 				lookAt: {
-					duration: 250
+					duration: props.moveDuration / 2
 				}
 			}}>
 			<gltf-model
@@ -42,16 +25,20 @@ export const Mouse = (props: IAnimalProps) =>
 				skeletalAnimation={[
 					{
 						clip: "Idle",
-						weight: idleWeight,
+						weight: weights.idle,
 					},
 					{
 						clip: "Walking",
-						weight: walkWeight,
+						weight: weights.walk,
 					},
 					{
 						clip: "Sitting",
-						weight: sitWeight,
+						weight: weights.sit,
 					},
+					{
+						clip: "Drinking",
+						weight: weights.drink,
+					}
 				]}
 			/>
 		</entity>

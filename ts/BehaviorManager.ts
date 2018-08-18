@@ -1,15 +1,14 @@
 import { Vector3Component, EventSubscriber } from "metaverse-api";
-import { IAnimalProps } from "./SharedProperties";
+import { IAnimalProps, Animation } from "./SharedProperties";
 import * as MathHelper from './MathHelper';
 import * as SceneHelper from './SceneHelper';
-import { walkTowards, stopWalking } from "./Actions";
+import { walkTowards, changeAnimation } from "./Actions";
 import { setInterval, clearInterval } from 'timers';
 
 export class BehaviorManager
 {
 	grid: boolean[][];
 	animalProps: IAnimalProps;
-
 	eventSubscriber: EventSubscriber;
 	onStateChange: () => void;
 	pathInterval: NodeJS.Timer | null = null;
@@ -23,7 +22,11 @@ export class BehaviorManager
 		this.onStateChange = onStateChange;
 	}
 
-	followPath(getTargetPosition: () => Vector3Component | null, moveSpeed: number, onArrive: () => void, onFail: () => void)
+	followPath(getTargetPosition: () => Vector3Component | null,
+		moveSpeed: number,
+		onArrive: () => void,
+		onFail: () => void,
+		maxDistanceFromEnd: number = 0)
 	{
 		const targetPosition = getTargetPosition();
 		if (!targetPosition)
@@ -32,9 +35,9 @@ export class BehaviorManager
 		}
 		const path = MathHelper.calcPath(this.animalProps.position, targetPosition, (position: Vector3Component) =>
 		{
-			return SceneHelper.isInBounds(position) && !this.grid[position.x][position.z];
-		});
-		if (!path || path.length == 0)
+			return SceneHelper.isPositionAvailable(this.grid, position);
+		}, maxDistanceFromEnd);
+		if (!path || path.length <= 1)
 		{
 			return onFail();
 		}
@@ -44,17 +47,12 @@ export class BehaviorManager
 			clearInterval(this.pathInterval);
 		}
 
-		let pathIndex = 0;
+		let pathIndex = 1;
 		this.pathInterval = setInterval(() =>
 		{
-			if (!MathHelper.equals(getTargetPosition(), targetPosition))
-			{
-				return this.followPath(getTargetPosition, moveSpeed, onArrive, onFail);
-			}
-
 			let target = path[pathIndex];
 			if (pathIndex < path.length - 1)
-			{
+			{ // Smooth diag movement
 				target = MathHelper.add(target, path[pathIndex + 1]);
 				target = MathHelper.div(target, 2);
 			}
@@ -68,7 +66,7 @@ export class BehaviorManager
 			}
 			catch (e)
 			{
-				return this.followPath(getTargetPosition, moveSpeed, onArrive, onFail);
+				return this.followPath(getTargetPosition, moveSpeed, onArrive, onFail, maxDistanceFromEnd);
 			}
 			this.onStateChange();
 			pathIndex++;
@@ -80,18 +78,39 @@ export class BehaviorManager
 				}
 				onArrive();
 			}
+
+			if (!MathHelper.equals(getTargetPosition(), targetPosition))
+			{ // The target moved
+				if (this.pathInterval)
+				{
+					clearInterval(this.pathInterval);
+				}
+				return this.followPath(getTargetPosition, moveSpeed, onArrive, onFail, maxDistanceFromEnd);
+			}
 		}, moveSpeed);
 	}
 
-	stop()
+	changeAnimationTo(animation: Animation)
 	{
 		if (this.walkInterval) 
 		{
 			clearInterval(this.walkInterval);
 		}
-		this.walkInterval = stopWalking(this.animalProps);
+		this.walkInterval = changeAnimation(this.animalProps, animation);
 	}
 
 	onClick() { }
+
+	stop()
+	{
+		if (this.walkInterval)
+		{
+			clearInterval(this.walkInterval);
+		}
+		if (this.pathInterval)
+		{
+			clearInterval(this.pathInterval);
+		}
+	}
 }
 

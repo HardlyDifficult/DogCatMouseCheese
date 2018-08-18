@@ -14,33 +14,62 @@ export const exitProps: ISceneryProps = {
 	position: { x: 28, y: 0, z: 20 },
 	rotation: { x: 0, y: 90, z: 0 }
 };
-// TODO lay out fence: generate three walls around the house with 3 doors
-export const fenceProps: ISceneryProps[] = [
+export const groundProps: ISceneryProps = {
+	position: { x: 15, y: 0, z: 15 },
+	rotation: { x: 90, y: 0, z: 0 }
+};
+export const fenceProps: ISceneryProps[] = [];
+for (let x = 10; x < 25; x += 2)
+{ // Front 
+	if (x == 12)
 	{
-		position: { x: 28, y: 0, z: 18 },
-		rotation: { x: 0, y: 90, z: 0 }
-	},
+		continue;
+	}
+	fenceProps.push({
+		position: { x, y: 0, z: 14.5 },
+		rotation: { x: 0, y: 180, z: 0 }
+	});
+}
+for (let x = 10; x < 25; x += 2)
+{ // Back 
+	if (x == 16)
 	{
-		position: { x: 28, y: 0, z: 16 },
-		rotation: { x: 0, y: 90, z: 0 }
-	},
+		continue;
+	}
+	fenceProps.push({
+		position: { x, y: 0, z: 3.5 },
+		rotation: { x: 0, y: 0, z: 0 }
+	});
+}
+for (let z = 5; z < 15; z += 2)
+{ // Right
+	fenceProps.push({
+		position: { x: 25, y: 0, z },
+		rotation: { x: 0, y: 270, z: 0 }
+	});
+}
+for (let z = 5; z < 15; z += 2)
+{ // Left
+	if (z == 11)
 	{
-		position: { x: 28, y: 0, z: 14 },
+		continue;
+	}
+	fenceProps.push({
+		position: { x: 9, y: 0, z },
 		rotation: { x: 0, y: 90, z: 0 }
-	},
-];
+	});
+}
 
-export function isInBounds(position: Vector3Component): boolean
+export function isPositionAvailable(grid: boolean[][], position: Vector3Component): boolean
+{
+	return isInBounds(position)
+		&& !grid[Math.round(position.x)][Math.round(position.z)];
+}
+
+function isInBounds(position: Vector3Component): boolean
 {
 	return position.x > .5 && position.x < 29.5
 		&& position.z > .5 && position.z < 29.5;
-}
-
-export function isSceneryPosition(position: Vector3Component)
-{
-	return MathHelper.inSphere(position, houseProps.position, 5)
-		|| MathHelper.inSphere(position, entranceProps.position, 3)
-		|| MathHelper.inSphere(position, exitProps.position, 3);
 }
 
 export function randomPosition(): Vector3Component
@@ -50,27 +79,56 @@ export function randomPosition(): Vector3Component
 
 export function updateGridWithStaticScenery(grid: boolean[][])
 {
-	// TODO fill in for all scenery
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 4, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 3, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 2, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 1, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -1, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -2, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -3, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -4, y: 0, z: 0 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 4, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 3, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 2, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 1, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: 0, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -4, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -3, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -2, y: 0, z: 1 }));
-	setGridCell(grid, MathHelper.add(houseProps.position, { x: -1, y: 0, z: 1 }));
+	for (const fence of fenceProps)
+	{
+		setGridCell(grid, fence.position);
+		if (fence.rotation.y == 0 || fence.rotation.y == 180)
+		{
+			setGridCell(grid, MathHelper.add(fence.position, { x: 1, y: 0, z: 0 }));
+			setGridCell(grid, MathHelper.add(fence.position, { x: -1, y: 0, z: 0 }));
+		}
+		else
+		{
+			setGridCell(grid, MathHelper.add(fence.position, { x: 0, y: 0, z: 1 }));
+			setGridCell(grid, MathHelper.add(fence.position, { x: 0, y: 0, z: -1 }));
+		}
+	}
+	for (let x = -4; x <= 4; x++)
+	{
+		for (let z = 0; z < 4; z++)
+		{
+			if (x == 0 && z == 0)
+			{
+				continue;
+			}
+			setGridCell(grid, MathHelper.add(houseProps.position, { x, y: 0, z }));
+		}
+	}
+	for (let x = 0; x < 2; x++)
+	{
+		for (let z = -2; z <= 2; z++)
+		{
+			if (x == 0 && z == 0)
+			{
+				continue;
+			}
+			setGridCell(grid, MathHelper.add(exitProps.position, { x, y: 0, z }));
+		}
+	}
+	for (let x = -1; x <= 0; x++)
+	{
+		for (let z = -1; z <= 1; z++)
+		{
+			if (x == 0 && z == 0)
+			{
+				continue;
+			}
+			setGridCell(grid, MathHelper.add(entranceProps.position, { x, y: 0, z }));
+		}
+	}
 }
 
 export function setGridCell(grid: boolean[][], position: Vector3Component)
 {
-	grid[position.x][position.z] = true;
+	grid[Math.round(position.x)][Math.round(position.z)] = true;
 }

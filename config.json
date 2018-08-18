@@ -1,17 +1,18 @@
 {
 	"trees": {
-		"min": 6,
+		"min": 5,
 		"max": 20
 	},
 	"animalTypes": {
 		"predator": "Dog",
 		"prey": "Cat"
 	},
+	"baitType": "Catnip",
 	"speeds": {
 		"predatorPatrol": 500,
-		"predatorAttack": 500,
-		"preySneak": 500,
-		"preySprint": 500
+		"predatorAttack": 400,
+		"preySneak": 700,
+		"preySprint": 300
 	},
-	"patrolRadius": 15
+	"patrolRadius": 10
 }

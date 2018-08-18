@@ -1,21 +1,7 @@
 import * as MathHelper from './MathHelper';
-import { IAnimalProps } from "./SharedProperties";
-import { Animation } from "./Animation";
+import { IAnimalProps, Animation } from "./SharedProperties";
 import { Vector3Component } from 'metaverse-api';
 import { setInterval, clearInterval } from 'timers';
-
-// TODO animation speeds
-
-export enum Action
-{
-	Idle,
-	Sit,
-	Walk,
-	Sneak,
-	Run,
-	Grab,
-	Kill,
-}
 
 export function walkTowards(entity: IAnimalProps, targetPosition: Vector3Component, grid: boolean[][]): NodeJS.Timer | null
 {
@@ -37,18 +23,13 @@ export function walkTowards(entity: IAnimalProps, targetPosition: Vector3Compone
 	return changeAnimation(entity, Animation.Walk);
 }
 
-export function stopWalking(entity: IAnimalProps): NodeJS.Timer | null
+export function changeAnimation(animal: IAnimalProps, animation: Animation): NodeJS.Timer | null
 {
-	return changeAnimation(entity, Animation.Idle);
-}
-
-function changeAnimation(entity: IAnimalProps, animation: Animation): NodeJS.Timer | null
-{
-	const animationDeltaPerFrame = .5 / (1000/60);
+	const animationDeltaPerFrame = .25 / (1000/60);
 	const interval = setInterval(() =>
 	{
 		let isDone = true;
-		for (let animationWeight of entity.animationWeights)
+		for (let animationWeight of animal.animationWeights)
 		{
 			if (animationWeight.animation == animation)
 			{

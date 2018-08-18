@@ -12,11 +12,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{109B54CE-0685-4497-B0E3-496ADB45458A}"
 	ProjectSection(SolutionItems) = preProject
 		components\Cat.tsx = components\Cat.tsx
+		components\Catnip.tsx = components\Catnip.tsx
 		components\Cheese.tsx = components\Cheese.tsx
 		components\Dog.tsx = components\Dog.tsx
 		components\Entrance.tsx = components\Entrance.tsx
 		components\Exit.tsx = components\Exit.tsx
 		components\Fence.tsx = components\Fence.tsx
+		components\Ground.tsx = components\Ground.tsx
 		components\House.tsx = components\House.tsx
 		components\Mouse.tsx = components\Mouse.tsx
 		components\Tree.tsx = components\Tree.tsx
@@ -25,7 +27,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ts", "ts", "{5EBC9F77-A516-4AB6-9807-5D87597156A5}"
 	ProjectSection(SolutionItems) = preProject
 		ts\Actions.ts = ts\Actions.ts
-		ts\Animation.ts = ts\Animation.ts
 		ts\BehaviorManager.ts = ts\BehaviorManager.ts
 		ts\MathHelper.ts = ts\MathHelper.ts
 		ts\PredatorBehaviorManager.ts = ts\PredatorBehaviorManager.ts
