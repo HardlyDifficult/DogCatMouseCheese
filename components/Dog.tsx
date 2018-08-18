@@ -19,7 +19,7 @@ export const Dog = (props: IAnimalProps) =>
 				}
 			}}>
 			<gltf-model
-				id="Dog"
+				id={props.id}
 				src="assets/BlockDog.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
 				skeletalAnimation={[

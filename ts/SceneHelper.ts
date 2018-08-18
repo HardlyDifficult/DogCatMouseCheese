@@ -93,11 +93,11 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 			setGridCell(grid, MathHelper.add(fence.position, { x: 0, y: 0, z: -1 }));
 		}
 	}
-	for (let x = -4; x <= 4; x++)
+	for (let x = -1; x <= 1; x++)
 	{
-		for (let z = 0; z < 4; z++)
+		for (let z = -1; z <= 1; z++)
 		{
-			if (x == 0 && z == 0)
+			if (x == 0 && z == 0 || z == -1 && x == 0)
 			{
 				continue;
 			}

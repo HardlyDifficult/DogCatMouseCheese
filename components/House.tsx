@@ -7,9 +7,8 @@ export const House = (props: ISceneryProps) =>
 		<gltf-model
 			id="House"
 			position={props.position}
-			src="assets/Archway/StoneArchway.gltf"
+			src="assets/DogHouse.gltf"
 			rotation={props.rotation}
-			scale={3}
 		/>
 	)
 }

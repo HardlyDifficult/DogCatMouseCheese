@@ -1,22 +1,17 @@
-import { Vector3Component, EventSubscriber } from "metaverse-api";
+import { Vector3Component } from "metaverse-api";
 import { IAnimalProps, Animation } from "./SharedProperties";
 import * as MathHelper from './MathHelper';
 import * as SceneHelper from './SceneHelper';
-import { walkTowards, changeAnimation } from "./Actions";
-import { setInterval, clearInterval } from 'timers';
+import { subToUpdate, unsubToUpdate } from "EventManager";
 
 export class BehaviorManager
 {
 	grid: boolean[][];
 	animalProps: IAnimalProps;
-	eventSubscriber: EventSubscriber;
 	onStateChange: () => void;
-	pathInterval: NodeJS.Timer | null = null;
-	walkInterval: NodeJS.Timer | null = null;
 
-	constructor(eventSubscriber: EventSubscriber, grid: boolean[][], entity: IAnimalProps, onStateChange: () => void)
+	constructor(grid: boolean[][], entity: IAnimalProps, onStateChange: () => void)
 	{
-		this.eventSubscriber = eventSubscriber;
 		this.grid = grid;
 		this.animalProps = entity;
 		this.onStateChange = onStateChange;
@@ -28,89 +23,129 @@ export class BehaviorManager
 		onFail: () => void,
 		maxDistanceFromEnd: number = 0)
 	{
+		if (this.animalProps.isDead)
+		{
+			return;
+		}
+		this.animalProps.moveDuration = moveSpeed * 1000 / 50; // Smooth motion
 		const targetPosition = getTargetPosition();
 		if (!targetPosition)
 		{
 			return onFail();
 		}
-		const path = MathHelper.calcPath(this.animalProps.position, targetPosition, (position: Vector3Component) =>
-		{
-			return SceneHelper.isPositionAvailable(this.grid, position);
-		}, maxDistanceFromEnd);
-		if (!path || path.length <= 1)
+		const path = MathHelper.calcPath(this.animalProps.position, targetPosition,
+			(p) => SceneHelper.isPositionAvailable(this.grid, p), maxDistanceFromEnd);
+		if (!path || path.length <= 0)
 		{
 			return onFail();
 		}
 
-		if (this.pathInterval)
+		let pathIndex = 0;
+		subToUpdate(this.animalProps.id, "move", (callCount) =>
 		{
-			clearInterval(this.pathInterval);
-		}
+			if (callCount % moveSpeed != 0)
+			{
+				return;
+			}
 
-		let pathIndex = 1;
-		this.pathInterval = setInterval(() =>
-		{
 			let target = path[pathIndex];
 			if (pathIndex < path.length - 1)
 			{ // Smooth diag movement
 				target = MathHelper.add(target, path[pathIndex + 1]);
 				target = MathHelper.div(target, 2);
 			}
-			if (this.walkInterval)
-			{
-				clearInterval(this.walkInterval);
-			}
 			try
 			{
-				this.walkInterval = walkTowards(this.animalProps, target, this.grid); 
+				this.walkTowards(this.animalProps, target);
 			}
 			catch (e)
 			{
+				unsubToUpdate(this.animalProps.id, "move");
 				return this.followPath(getTargetPosition, moveSpeed, onArrive, onFail, maxDistanceFromEnd);
 			}
 			this.onStateChange();
-			pathIndex++;
-			if (pathIndex >= path.length)
-			{
-				if (this.pathInterval)
-				{
-					clearInterval(this.pathInterval);
-				}
-				onArrive();
-			}
 
 			if (!MathHelper.equals(getTargetPosition(), targetPosition))
 			{ // The target moved
-				if (this.pathInterval)
-				{
-					clearInterval(this.pathInterval);
-				}
+				unsubToUpdate(this.animalProps.id, "move");
 				return this.followPath(getTargetPosition, moveSpeed, onArrive, onFail, maxDistanceFromEnd);
 			}
-		}, moveSpeed);
-	}
 
-	changeAnimationTo(animation: Animation)
-	{
-		if (this.walkInterval) 
-		{
-			clearInterval(this.walkInterval);
-		}
-		this.walkInterval = changeAnimation(this.animalProps, animation);
+			pathIndex++;
+			if (pathIndex >= path.length)
+			{
+				unsubToUpdate(this.animalProps.id, "move");
+				onArrive();
+			}
+		});
 	}
 
 	onClick() { }
 
-	stop()
+	walkTowards(animal: IAnimalProps, targetPosition: Vector3Component)
 	{
-		if (this.walkInterval)
-		{
-			clearInterval(this.walkInterval);
+		const toTarget = MathHelper.subtract(targetPosition, animal.position);
+		if (MathHelper.isZero(toTarget))
+		{ // Already there
+			this.changeAnimation(Animation.Idle);
+			return;
 		}
-		if (this.pathInterval)
+
+		this.grid[Math.round(animal.position.x)][Math.round(animal.position.z)] = false;
+		if (this.grid[Math.round(targetPosition.x)][Math.round(targetPosition.z)])
 		{
-			clearInterval(this.pathInterval);
+			throw new Error("Space occupied, can't walk there.");
 		}
+		animal.position = targetPosition;
+		this.grid[Math.round(animal.position.x)][Math.round(animal.position.z)] = true;
+		// Look past the target
+		animal.lookAtPosition = MathHelper.add(targetPosition, toTarget);
+		this.changeAnimation(Animation.Walk);
+	}
+
+	changeAnimation(animation: Animation)
+	{
+		if (this.animalProps.isDead)
+		{
+			return;
+		}
+		const animationDeltaPerFrame = .25 / (1000 / 60);
+		subToUpdate(this.animalProps.id, "changeAnimation", () =>
+		{
+			let isDone = true;
+			for (let animationWeight of this.animalProps.animationWeights)
+			{
+				if (animationWeight.animation == animation)
+				{
+					animationWeight.weight += animationDeltaPerFrame;
+					if (animationWeight.weight >= 1)
+					{
+						animationWeight.weight = 1;
+					}
+					else
+					{
+						isDone = false;
+					}
+				}
+				else
+				{
+					animationWeight.weight -= animationDeltaPerFrame;
+					if (animationWeight.weight <= 0)
+					{
+						animationWeight.weight = 0;
+					}
+					else
+					{
+						isDone = false;
+					}
+				}
+
+				this.onStateChange();
+			}
+			if (isDone)
+			{
+				unsubToUpdate(this.animalProps.id, "changeAnimation");
+			}
+		});
 	}
 }
-

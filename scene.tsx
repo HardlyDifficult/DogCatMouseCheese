@@ -18,6 +18,7 @@ import { PreyBehaviorManager } from 'ts/PreyBehaviorManager';
 import { PredatorBehaviorManager } from 'ts/PredatorBehaviorManager';
 import { Ground } from 'components/Ground';
 import { Catnip } from 'components/Catnip';
+import { callOnUpdate, initEventManager, unsubToUpdateForObject } from 'EventManager';
 
 export default class DogCatMouseCheese extends DCL.ScriptableScene
 {
@@ -43,6 +44,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	// Init
 	sceneDidMount()
 	{
+		initEventManager(this.eventSubscriber);
 		this.createGrid();
 		this.grid[Math.round(this.state.baitProps.position.x)][Math.round(this.state.baitProps.position.z)] = true;
 		this.spawnTrees();
@@ -54,6 +56,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		this.eventSubscriber.on('preyExit', e => this.onPreyExit(e));
 		this.eventSubscriber.on('startChasingPrey', e => this.onStartChasingPrey(e));
 		this.eventSubscriber.on('caughtPrey', e => this.onCaughtPrey(e));
+		this.updateLoop();
 	}
 	createGrid()
 	{
@@ -90,17 +93,24 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	}
 
 	// Events
+	updateLoop()
+	{
+		setTimeout(() =>
+		{
+			callOnUpdate();
+			this.updateLoop();
+		}, 1000 / 60);
+	}
 	onEntranceClick()
 	{ // Spawn prey
 		const animal = this.spawnAnimal(
-			config.animalTypes.prey,
+			config.prey.animalType,
 			SceneHelper.entranceProps.position,
 			MathHelper.add(SceneHelper.entranceProps.position, { x: 1, y: 0, z: 0 }),
-			config.speeds.preySneak);
+			config.prey.sneakSpeed);
 		if (animal)
 		{
 			this.behaviors.push(new PreyBehaviorManager(
-				this.eventSubscriber,
 				this.grid,
 				animal,
 				this.state.baitProps.position,
@@ -114,13 +124,13 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	onHouseClick()
 	{ // Spawn predator
 		const animal = this.spawnAnimal(
-			config.animalTypes.predator,
+			config.predator.animalType,
 			SceneHelper.houseProps.position,
 			MathHelper.add(SceneHelper.houseProps.position, { x: 0, y: 0, z: -1 }),
-			config.speeds.predatorPatrol);
+			config.predator.patrolSpeed);
 		if (animal)
 		{
-			this.behaviors.push(new PredatorBehaviorManager(this.eventSubscriber, this.grid, animal, () =>
+			this.behaviors.push(new PredatorBehaviorManager(this.grid, animal, () =>
 			{
 				this.setState({ animals: this.state.animals });
 			}, () => this.state.animals));
@@ -131,6 +141,10 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		for (const animal of this.state.animals.slice())
 		{
 			this.despawn(animal);
+		}
+		for (const tree of this.state.trees)
+		{
+			this.grid[Math.round(tree.position.x)][Math.round(tree.position.z)] = false;
 		}
 		this.spawnTrees();
 	}
@@ -173,7 +187,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		}
 		this.grid[Math.round(position.x)][Math.round(position.z)] = true;
 
-		let animals = this.state.animals.slice();
 		const animal: IAnimalProps = {
 			id: "Animal" + this.objectCounter++,
 			animalType: AnimalType[animalKey],
@@ -188,8 +201,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			],
 			isDead: false,
 		};
-		animals.push(animal);
-		this.setState({ animals });
+		this.setState({ animals: [...this.state.animals, animal] });
 		this.eventSubscriber.on(animal.id + "_click", () =>
 		{
 			let behavior = this.behaviors.find((b) => b.animalProps == animal);
@@ -203,15 +215,12 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	}
 	despawn(animal: IAnimalProps)
 	{
+		console.log("Despawn: " + animal.animalType + " Remaining: " + (this.state.animals.length - 1));
 		animal.isDead = true;
 		this.grid[Math.round(animal.position.x)][Math.round(animal.position.z)] = false;
-		const behavior = this.behaviors.find((b) => b.animalProps == animal);
-		if (behavior)
-		{
-			behavior.stop();
-		}
-		let animals = this.state.animals;
-		animals.splice(animals.findIndex((a) => a == animal), 1);
+		unsubToUpdateForObject(animal.id);
+		this.behaviors = this.behaviors.filter((a) => a.animalProps.id != animal.id);
+		const animals = this.state.animals.filter((a) => a.id != animal.id);
 		this.setState({ animals });
 	}
 
@@ -245,6 +254,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	{
 		return this.state.animals.map((animal) =>
 		{
+			console.log(JSON.stringify(animal));
 			switch (animal.animalType)
 			{
 				case AnimalType.Mouse:

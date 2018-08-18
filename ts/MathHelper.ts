@@ -16,7 +16,7 @@ export function lengthSquared(a: Vector3Component): number
 }
 export function isZero(a: Vector3Component): boolean
 {
-	return a.x <= 0.01 && a.y <= 0.01 && a.z <= 0.01;
+	return Math.abs(a.x) <= 0.01 && Math.abs(a.y) <= 0.01 && Math.abs(a.z) <= 0.01;
 }
 export function equals(a: Vector3Component | null, b: Vector3Component | null): boolean
 {
@@ -72,7 +72,12 @@ export function calcPath(startingPosition: Vector3Component, targetPosition: Vec
 			return JSON.stringify(x);
 		},
 	});
-	return results.path;
+	if (results.status == "success")
+	{
+		return results.path;
+	}
+
+	return [];
 }
 function getNeighbors(startingPosition: Vector3Component,
 	isValidPosition: (position: Vector3Component) => boolean): Vector3Component[]

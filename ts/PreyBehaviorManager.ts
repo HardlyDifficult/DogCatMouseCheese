@@ -1,9 +1,9 @@
 const config = require('../config.json');
-import { Vector3Component, EventSubscriber } from "metaverse-api";
+import { Vector3Component } from "metaverse-api";
 import * as MathHelper from "./MathHelper";
 import { IAnimalProps, Animation } from "./SharedProperties";
 import { BehaviorManager } from "./BehaviorManager";
-import { changeAnimation } from "ts/Actions";
+import { emitEvent } from "EventManager";
 
 export class PreyBehaviorManager extends BehaviorManager
 {
@@ -11,9 +11,9 @@ export class PreyBehaviorManager extends BehaviorManager
 	exitPosition: Vector3Component;
 	hasTarget = false;
 
-	constructor(eventSubscriber: EventSubscriber, grid: boolean[][], entity: IAnimalProps, targetPosition: Vector3Component, exitPosition: Vector3Component, onStateChange: () => void)
+	constructor(grid: boolean[][], entity: IAnimalProps, targetPosition: Vector3Component, exitPosition: Vector3Component, onStateChange: () => void)
 	{
-		super(eventSubscriber, grid, entity, onStateChange);
+		super(grid, entity, onStateChange);
 		this.targetPosition = targetPosition;
 		this.exitPosition = exitPosition;
 		this.prey(false);
@@ -26,16 +26,12 @@ export class PreyBehaviorManager extends BehaviorManager
 			return this.exit(shouldRun);
 		}
 
-		this.followPath(() => this.getTargetPosition(), shouldRun ? config.speeds.preySprint : config.speeds.preySneak, async () =>
+		this.followPath(() => this.getTargetPosition(), shouldRun ? config.prey.sprintSpeed : config.prey.sneakSpeed, async () =>
 		{
-			if (this.walkInterval)
-			{
-				clearInterval(this.walkInterval);
-			}
-			this.walkInterval = changeAnimation(this.animalProps, Animation.Drink);
+			this.changeAnimation(Animation.Drink);
 			await MathHelper.sleep(1500 * (shouldRun ? .5 : 1));
 			this.hasTarget = true;
-			this.eventSubscriber.emit("captureCheese");
+			emitEvent("captureCheese");
 			await MathHelper.sleep(500 * (shouldRun ? .5 : 1));
 			this.exit(shouldRun);
 		}, async () =>
@@ -68,9 +64,9 @@ export class PreyBehaviorManager extends BehaviorManager
 
 	exit(shouldRun: boolean)
 	{
-		this.followPath(() => this.exitPosition, shouldRun ? config.speeds.preySprint : config.speeds.preySneak, () =>
+		this.followPath(() => this.exitPosition, shouldRun ? config.prey.sprintSpeed : config.prey.sneakSpeed, () =>
 		{
-			this.eventSubscriber.emit("preyExit", this.animalProps);
+			emitEvent("preyExit", this.animalProps);
 		}, async () =>
 			{
 				await MathHelper.sleep(1000);

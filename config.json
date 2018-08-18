@@ -3,16 +3,18 @@
 		"min": 5,
 		"max": 20
 	},
-	"animalTypes": {
-		"predator": "Cat",
-		"prey": "Mouse"
-	},
 	"baitType": "Cheese",
-	"speeds": {
-		"predatorPatrol": 500,
-		"predatorAttack": 400,
-		"preySneak": 700,
-		"preySprint": 300
+	"prey": {
+		"animalType": "Cat",
+		"sneakSpeed": 70,
+		"sprintSpeed": 20
 	},
-	"patrolRadius": 10
+	"predator": {
+		"animalType": "Dog",
+		"patrolRadius": 10,
+		"lookAroundSpeed": 120,
+		"lookRadius": 5,
+		"patrolSpeed": 50,
+		"attackSpeed": 40
+	}
 }

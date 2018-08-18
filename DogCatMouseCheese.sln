@@ -26,8 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ts", "ts", "{5EBC9F77-A516-4AB6-9807-5D87597156A5}"
 	ProjectSection(SolutionItems) = preProject
-		ts\Actions.ts = ts\Actions.ts
 		ts\BehaviorManager.ts = ts\BehaviorManager.ts
+		EventManager.ts = EventManager.ts
 		ts\MathHelper.ts = ts\MathHelper.ts
 		ts\PredatorBehaviorManager.ts = ts\PredatorBehaviorManager.ts
 		ts\PreyBehaviorManager.ts = ts\PreyBehaviorManager.ts
