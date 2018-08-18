@@ -218,7 +218,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	}
 	despawn(animal: IAnimalProps)
 	{
-		console.log("Despawn: " + animal.animalType + " Remaining: " + (this.state.animals.length - 1));
 		animal.isDead = true;
 		this.grid[Math.round(animal.position.x)][Math.round(animal.position.z)] = false;
 		unsubToUpdateForObject(animal.id);
@@ -257,7 +256,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	{
 		return this.state.animals.map((animal) =>
 		{
-			//console.log(JSON.stringify(animal));
 			switch (animal.animalType)
 			{
 				case AnimalType.Mouse:
