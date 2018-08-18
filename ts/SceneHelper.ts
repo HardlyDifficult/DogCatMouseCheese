@@ -1,6 +1,6 @@
 import { Vector3Component } from 'metaverse-api';
-import * as MathHelper from './MathHelper';
 import { ISceneryProps } from './SharedProperties';
+import { add } from 'ts/MathHelper';
 
 export const houseProps: ISceneryProps = {
 	position: { x: 15, y: 0, z: 25 },
@@ -84,13 +84,13 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 		setGridCell(grid, fence.position);
 		if (fence.rotation.y == 0 || fence.rotation.y == 180)
 		{
-			setGridCell(grid, MathHelper.add(fence.position, { x: 1, y: 0, z: 0 }));
-			setGridCell(grid, MathHelper.add(fence.position, { x: -1, y: 0, z: 0 }));
+			setGridCell(grid, add(fence.position, { x: 1, y: 0, z: 0 }));
+			setGridCell(grid, add(fence.position, { x: -1, y: 0, z: 0 }));
 		}
 		else
 		{
-			setGridCell(grid, MathHelper.add(fence.position, { x: 0, y: 0, z: 1 }));
-			setGridCell(grid, MathHelper.add(fence.position, { x: 0, y: 0, z: -1 }));
+			setGridCell(grid, add(fence.position, { x: 0, y: 0, z: 1 }));
+			setGridCell(grid, add(fence.position, { x: 0, y: 0, z: -1 }));
 		}
 	}
 	for (let x = -1; x <= 1; x++)
@@ -101,7 +101,7 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 			{
 				continue;
 			}
-			setGridCell(grid, MathHelper.add(houseProps.position, { x, y: 0, z }));
+			setGridCell(grid, add(houseProps.position, { x, y: 0, z }));
 		}
 	}
 	for (let x = 0; x < 2; x++)
@@ -112,7 +112,7 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 			{
 				continue;
 			}
-			setGridCell(grid, MathHelper.add(exitProps.position, { x, y: 0, z }));
+			setGridCell(grid, add(exitProps.position, { x, y: 0, z }));
 		}
 	}
 	for (let x = -1; x <= 0; x++)
@@ -123,7 +123,7 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 			{
 				continue;
 			}
-			setGridCell(grid, MathHelper.add(entranceProps.position, { x, y: 0, z }));
+			setGridCell(grid, add(entranceProps.position, { x, y: 0, z }));
 		}
 	}
 }

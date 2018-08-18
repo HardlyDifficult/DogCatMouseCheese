@@ -3,7 +3,7 @@ import { IAnimalProps, getAnimationWeights } from '../ts/SharedProperties';
 
 export const Cat = (props: IAnimalProps) =>
 {
-	// TODO why does this fail without an ID on the parent 'entity'?
+	// DCL: why does this fail without an ID on the parent 'entity'?
 	const weights = getAnimationWeights(props);
 	return (
 		<entity

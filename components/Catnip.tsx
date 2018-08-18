@@ -17,6 +17,7 @@ export const Catnip = (props: IBaitProps) =>
 {
 	return (
 		<entity
+			id="CatnipParent"
 			position={props.position}
 		>
 			{renderBase(props)}

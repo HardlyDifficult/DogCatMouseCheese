@@ -17,6 +17,7 @@ export const Cheese = (props: IBaitProps) =>
 {
 	return (
 		<entity
+			id="CheeseParent"
 			position={props.position}
 		>
 			{renderBase(props)}

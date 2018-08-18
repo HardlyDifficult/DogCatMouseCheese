@@ -34,6 +34,10 @@ export function round(a: Vector3Component): Vector3Component
 {
 	return { x: Math.round(a.x), y: Math.round(a.y), z: Math.round(a.z) };
 }
+export function mul(a: Vector3Component, b: number): Vector3Component
+{
+	return { x: a.x * b, y: a.y * b, z: a.z * b };
+}
 export function div(a: Vector3Component, b: number): Vector3Component
 {
 	return { x: a.x / b, y: a.y / b, z: a.z / b };

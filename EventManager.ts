@@ -10,6 +10,7 @@ export function initEventManager(_eventSubscriber: EventSubscriber)
 
 export function emitEvent(eventName: string, ...params: any[])
 {
+	console.log(eventName);
 	eventSubscriber.emit(eventName, ...params);
 }
 

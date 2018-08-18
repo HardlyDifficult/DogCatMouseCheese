@@ -1,8 +1,8 @@
 import { Vector3Component } from "metaverse-api";
 import { IAnimalProps, Animation } from "./SharedProperties";
-import * as MathHelper from './MathHelper';
 import * as SceneHelper from './SceneHelper';
 import { subToUpdate, unsubToUpdate } from "EventManager";
+import { calcPath, equals, subtract, isZero, lengthSquared, mul, div, add } from "ts/MathHelper";
 
 export class BehaviorManager
 {
@@ -33,7 +33,7 @@ export class BehaviorManager
 		{
 			return onFail();
 		}
-		const path = MathHelper.calcPath(this.animalProps.position, targetPosition,
+		const path = calcPath(this.animalProps.position, targetPosition,
 			(p) => SceneHelper.isPositionAvailable(this.grid, p), maxDistanceFromEnd);
 		if (!path || path.length <= 0)
 		{
@@ -51,8 +51,8 @@ export class BehaviorManager
 			let target = path[pathIndex];
 			if (pathIndex < path.length - 1)
 			{ // Smooth diag movement
-				target = MathHelper.add(target, path[pathIndex + 1]);
-				target = MathHelper.div(target, 2);
+				target = add(target, path[pathIndex + 1]);
+				target = div(target, 2);
 			}
 			try
 			{
@@ -65,7 +65,7 @@ export class BehaviorManager
 			}
 			this.onStateChange();
 
-			if (!MathHelper.equals(getTargetPosition(), targetPosition))
+			if (!equals(getTargetPosition(), targetPosition))
 			{ // The target moved
 				unsubToUpdate(this.animalProps.id, "move");
 				return this.followPath(getTargetPosition, moveSpeed, onArrive, onFail, maxDistanceFromEnd);
@@ -84,8 +84,8 @@ export class BehaviorManager
 
 	walkTowards(animal: IAnimalProps, targetPosition: Vector3Component)
 	{
-		const toTarget = MathHelper.subtract(targetPosition, animal.position);
-		if (MathHelper.isZero(toTarget))
+		const toTarget = subtract(targetPosition, animal.position);
+		if (isZero(toTarget))
 		{ // Already there
 			this.changeAnimation(Animation.Idle);
 			return;
@@ -98,8 +98,11 @@ export class BehaviorManager
 		}
 		animal.position = targetPosition;
 		this.grid[Math.round(animal.position.x)][Math.round(animal.position.z)] = true;
-		// Look past the target
-		animal.lookAtPosition = MathHelper.add(targetPosition, toTarget);
+		if (lengthSquared(toTarget) > .1)
+		{
+			// DCL: Look past the target.  If this is near targetPosition it may not render
+			animal.lookAtPosition = add(targetPosition, mul(toTarget, 10));
+		}
 		this.changeAnimation(Animation.Walk);
 	}
 

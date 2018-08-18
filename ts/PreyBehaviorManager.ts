@@ -1,9 +1,9 @@
 const config = require('../config.json');
 import { Vector3Component } from "metaverse-api";
-import * as MathHelper from "./MathHelper";
 import { IAnimalProps, Animation } from "./SharedProperties";
 import { BehaviorManager } from "./BehaviorManager";
-import { emitEvent } from "EventManager";
+import { emitEvent, unsubToUpdateForObject } from "EventManager";
+import { sleep, add } from "ts/MathHelper";
 
 export class PreyBehaviorManager extends BehaviorManager
 {
@@ -28,11 +28,13 @@ export class PreyBehaviorManager extends BehaviorManager
 
 		this.followPath(() => this.getTargetPosition(), shouldRun ? config.prey.sprintSpeed : config.prey.sneakSpeed, async () =>
 		{
+			unsubToUpdateForObject(this.animalProps.id);
+			this.animalProps.lookAtPosition = this.targetPosition;
 			this.changeAnimation(Animation.Drink);
-			await MathHelper.sleep(1500 * (shouldRun ? .5 : 1));
+			await sleep(1500 * (shouldRun ? .5 : 1));
 			this.hasTarget = true;
 			emitEvent("captureCheese");
-			await MathHelper.sleep(500 * (shouldRun ? .5 : 1));
+			await sleep(500 * (shouldRun ? .5 : 1));
 			this.exit(shouldRun);
 		}, async () =>
 			{
@@ -43,14 +45,14 @@ export class PreyBehaviorManager extends BehaviorManager
 	getTargetPosition(): Vector3Component | null
 	{
 		for (const position of [
-			MathHelper.add(this.targetPosition, { x: -1, y: 0, z: 0 }),
-			MathHelper.add(this.targetPosition, { x: -1, y: 0, z: 1 }),
-			MathHelper.add(this.targetPosition, { x: -1, y: 0, z: -1 }),
-			MathHelper.add(this.targetPosition, { x: 0, y: 0, z: 1 }),
-			MathHelper.add(this.targetPosition, { x: 0, y: 0, z: -1 }),
-			MathHelper.add(this.targetPosition, { x: 1, y: 0, z: 0 }),
-			MathHelper.add(this.targetPosition, { x: 1, y: 0, z: 1 }),
-			MathHelper.add(this.targetPosition, { x: 1, y: 0, z: -1 }),
+			add(this.targetPosition, { x: -1, y: 0, z: 0 }),
+			add(this.targetPosition, { x: -1, y: 0, z: 1 }),
+			add(this.targetPosition, { x: -1, y: 0, z: -1 }),
+			add(this.targetPosition, { x: 0, y: 0, z: 1 }),
+			add(this.targetPosition, { x: 0, y: 0, z: -1 }),
+			add(this.targetPosition, { x: 1, y: 0, z: 0 }),
+			add(this.targetPosition, { x: 1, y: 0, z: 1 }),
+			add(this.targetPosition, { x: 1, y: 0, z: -1 }),
 		])
 		{
 			if (!this.grid[Math.round(position.x)][Math.round(position.z)])
@@ -69,7 +71,7 @@ export class PreyBehaviorManager extends BehaviorManager
 			emitEvent("preyExit", this.animalProps);
 		}, async () =>
 			{
-				await MathHelper.sleep(1000);
+				await sleep(1000);
 				this.exit(shouldRun);
 			});
 	}

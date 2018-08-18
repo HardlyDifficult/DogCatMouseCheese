@@ -1,7 +1,6 @@
 const config = require('./config.json');
 import * as DCL from 'metaverse-api';
 import { Vector3Component } from 'metaverse-api';
-import * as MathHelper from 'ts/MathHelper';
 import * as SceneHelper from 'ts/SceneHelper';
 import { Dog } from 'components/Dog';
 import { Cat } from 'components/Cat';
@@ -19,6 +18,7 @@ import { PredatorBehaviorManager } from 'ts/PredatorBehaviorManager';
 import { Ground } from 'components/Ground';
 import { Catnip } from 'components/Catnip';
 import { callOnUpdate, initEventManager, unsubToUpdateForObject } from 'EventManager';
+import { sleep, add } from 'ts/MathHelper';
 
 export default class DogCatMouseCheese extends DCL.ScriptableScene
 {
@@ -106,7 +106,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		const animal = this.spawnAnimal(
 			config.prey.animalType,
 			SceneHelper.entranceProps.position,
-			MathHelper.add(SceneHelper.entranceProps.position, { x: 1, y: 0, z: 0 }),
+			add(SceneHelper.entranceProps.position, { x: 1, y: 0, z: 0 }),
 			config.prey.sneakSpeed);
 		if (animal)
 		{
@@ -126,7 +126,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		const animal = this.spawnAnimal(
 			config.predator.animalType,
 			SceneHelper.houseProps.position,
-			MathHelper.add(SceneHelper.houseProps.position, { x: 0, y: 0, z: -1 }),
+			add(SceneHelper.houseProps.position, { x: 0, y: 0, z: -1 }),
 			config.predator.patrolSpeed);
 		if (animal)
 		{
@@ -153,13 +153,13 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		let cheeseProps = this.state.baitProps;
 		cheeseProps.isVisible = false;
 		this.setState({ cheeseProps: cheeseProps });
-		await MathHelper.sleep(2000);
+		await sleep(2000);
 		cheeseProps.isVisible = true;
 		this.setState({ cheeseProps: cheeseProps });
 	}
 	async onPreyExit(animal: IAnimalProps)
 	{
-		await MathHelper.sleep(500);
+		await sleep(500);
 		this.despawn(animal);
 	}
 	onStartChasingPrey(prey: IAnimalProps)
@@ -170,8 +170,11 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			behavior.onSpotted();
 		}
 	}
-	onCaughtPrey(prey: IAnimalProps)
+	async onCaughtPrey(prey: IAnimalProps)
 	{
+		prey.isDead = true;
+		unsubToUpdateForObject(prey.id);
+		await sleep(1500);
 		this.despawn(prey);
 	}
 
@@ -254,7 +257,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	{
 		return this.state.animals.map((animal) =>
 		{
-			console.log(JSON.stringify(animal));
+			//console.log(JSON.stringify(animal));
 			switch (animal.animalType)
 			{
 				case AnimalType.Mouse:
