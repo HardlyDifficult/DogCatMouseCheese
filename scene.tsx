@@ -116,7 +116,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		const animal = this.spawnAnimal(
 			config.animalTypes.predator,
 			SceneHelper.houseProps.position,
-			MathHelper.add(SceneHelper.houseProps.position, { x: 0, y: 0, z: 1 }),
+			MathHelper.add(SceneHelper.houseProps.position, { x: 0, y: 0, z: -1 }),
 			config.speeds.predatorPatrol);
 		if (animal)
 		{
@@ -174,7 +174,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		this.grid[Math.round(position.x)][Math.round(position.z)] = true;
 
 		let animals = this.state.animals.slice();
-		const animal = {
+		const animal: IAnimalProps = {
 			id: "Animal" + this.objectCounter++,
 			animalType: AnimalType[animalKey],
 			position,
@@ -185,7 +185,8 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				{ animation: Animation.Walk, weight: 0 },
 				{ animation: Animation.Drink, weight: 0 },
 				{ animation: Animation.Sit, weight: 0 },
-			]
+			],
+			isDead: false,
 		};
 		animals.push(animal);
 		this.setState({ animals });

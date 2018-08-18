@@ -4,10 +4,10 @@
 		"max": 20
 	},
 	"animalTypes": {
-		"predator": "Dog",
-		"prey": "Cat"
+		"predator": "Cat",
+		"prey": "Mouse"
 	},
-	"baitType": "Catnip",
+	"baitType": "Cheese",
 	"speeds": {
 		"predatorPatrol": 500,
 		"predatorAttack": 400,

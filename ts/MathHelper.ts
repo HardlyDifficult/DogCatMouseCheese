@@ -46,7 +46,7 @@ export function inSphere(position: Vector3Component, target: Vector3Component, r
 
 // Pathfinding
 export function calcPath(startingPosition: Vector3Component, targetPosition: Vector3Component,
-	isValidPosition: (position: Vector3Component) => boolean, maxDistanceFromEnd: number = 0): Vector3Component[]
+	isValidPosition: (position: Vector3Component) => boolean, maxDistanceFromEnd: number): Vector3Component[]
 {
 	targetPosition = round(targetPosition);
 	const results = aStar({

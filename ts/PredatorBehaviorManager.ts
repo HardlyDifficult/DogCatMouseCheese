@@ -44,7 +44,7 @@ export class PredatorBehaviorManager extends BehaviorManager
 			await MathHelper.sleep(1500);
 			this.patrol();
 		}
-		this.followPath(() => targetPosition, config.speeds.predatorPatrol, patrolAgain, patrolAgain);
+		this.followPath(() => targetPosition, config.speeds.predatorPatrol, patrolAgain, patrolAgain, 2);
 
 		if (this.predatorInterval)
 		{
