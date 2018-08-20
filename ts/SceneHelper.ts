@@ -1,6 +1,6 @@
-import { Vector3Component } from 'metaverse-api';
 import { ISceneryProps } from './SharedProperties';
 import { add } from 'ts/MathHelper';
+import { Grid } from 'ts/Grid';
 
 export const houseProps: ISceneryProps = {
 	position: { x: 15, y: 0, z: 25 },
@@ -60,37 +60,20 @@ for (let z = 5; z < 15; z += 2)
 	});
 }
 
-export function isPositionAvailable(grid: boolean[][], position: Vector3Component): boolean
-{
-	return isInBounds(position)
-		&& !grid[Math.round(position.x)][Math.round(position.z)];
-}
-
-function isInBounds(position: Vector3Component): boolean
-{
-	return position.x > .5 && position.x < 29.5
-		&& position.z > .5 && position.z < 29.5;
-}
-
-export function randomPosition(): Vector3Component
-{
-	return { x: Math.random() * 29 + .5, y: 0, z: Math.random() * 29 + .5 };
-}
-
-export function updateGridWithStaticScenery(grid: boolean[][])
+export function updateGridWithStaticScenery()
 {
 	for (const fence of fenceProps)
 	{
-		setGridCell(grid, fence.position);
+		Grid.set(fence.position, true);
 		if (fence.rotation.y == 0 || fence.rotation.y == 180)
 		{
-			setGridCell(grid, add(fence.position, { x: 1, y: 0, z: 0 }));
-			setGridCell(grid, add(fence.position, { x: -1, y: 0, z: 0 }));
+			Grid.set(add(fence.position, { x: 1, y: 0, z: 0 }), true);
+			Grid.set(add(fence.position, { x: -1, y: 0, z: 0 }), true);
 		}
 		else
 		{
-			setGridCell(grid, add(fence.position, { x: 0, y: 0, z: 1 }));
-			setGridCell(grid, add(fence.position, { x: 0, y: 0, z: -1 }));
+			Grid.set(add(fence.position, { x: 0, y: 0, z: 1 }), true);
+			Grid.set(add(fence.position, { x: 0, y: 0, z: -1 }), true);
 		}
 	}
 	for (let x = -1; x <= 1; x++)
@@ -101,7 +84,7 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 			{
 				continue;
 			}
-			setGridCell(grid, add(houseProps.position, { x, y: 0, z }));
+			Grid.set(add(houseProps.position, { x, y: 0, z }), true);
 		}
 	}
 	for (let x = 0; x < 2; x++)
@@ -112,7 +95,7 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 			{
 				continue;
 			}
-			setGridCell(grid, add(exitProps.position, { x, y: 0, z }));
+			Grid.set(add(exitProps.position, { x, y: 0, z }), true);
 		}
 	}
 	for (let x = -1; x <= 0; x++)
@@ -123,12 +106,7 @@ export function updateGridWithStaticScenery(grid: boolean[][])
 			{
 				continue;
 			}
-			setGridCell(grid, add(entranceProps.position, { x, y: 0, z }));
+			Grid.set(add(entranceProps.position, { x, y: 0, z }), true);
 		}
 	}
-}
-
-export function setGridCell(grid: boolean[][], position: Vector3Component)
-{
-	grid[Math.round(position.x)][Math.round(position.z)] = true;
 }

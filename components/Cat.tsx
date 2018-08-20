@@ -20,9 +20,9 @@ export const Cat = (props: IAnimalProps) =>
 			}}>
 			<gltf-model
 				id={props.id}
-				src="assets/BlockDog.gltf"
-				rotation={{ x: 0, y: 90, z: 0 }}
-				scale={.35 * props.scale}
+				src="assets/BlockCat.gltf"
+				rotation={{ x: 0, y: -90, z: 0 }}
+				scale={props.scale}
 				skeletalAnimation={[
 					{
 						clip: "Idle",

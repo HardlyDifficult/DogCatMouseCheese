@@ -14,6 +14,7 @@ export enum BaitType
 
 export interface IBaitProps
 {
+	id: string,
 	position: Vector3Component,
 	isVisible: boolean,
 	baitType: BaitType,
@@ -29,9 +30,9 @@ export enum Animation
 
 export enum AnimalType
 {
-	Dog,
-	Cat,
-	Mouse,
+	Dog = "Dog",
+	Cat = "Cat",
+	Mouse = "Mouse",
 }
 
 export interface IAnimalProps
@@ -41,8 +42,8 @@ export interface IAnimalProps
 	position: Vector3Component,
 	moveDuration: number,
 	lookAtPosition: Vector3Component,
-	animationWeights: { animation: Animation, weight: number }[],
-	isDead: boolean,
+	animationWeights: { animation: Animation, weight: number }[], // copy
+	isDead: boolean,// remove
 	scale: number,
 }
 

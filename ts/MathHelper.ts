@@ -1,5 +1,6 @@
 import { Vector3Component } from 'metaverse-api';
-const aStar = require('a-star'); 
+import { Grid } from 'ts/Grid';
+const aStar = require('a-star');
 
 // Vector3 
 export function add(a: Vector3Component, b: Vector3Component): Vector3Component
@@ -49,19 +50,18 @@ export function inSphere(position: Vector3Component, target: Vector3Component, r
 }
 
 // Pathfinding
-export function calcPath(startingPosition: Vector3Component, targetPosition: Vector3Component,
-	isValidPosition: (position: Vector3Component) => boolean, maxDistanceFromEnd: number): Vector3Component[]
+export function calcPath(startingPosition: Vector3Component, targetPosition: Vector3Component): Vector3Component[]
 {
 	targetPosition = round(targetPosition);
 	const results = aStar({
 		start: round(startingPosition),
 		isEnd: (n: Vector3Component): boolean =>
 		{
-			return inSphere(n, targetPosition, maxDistanceFromEnd + 1);
+			return inSphere(n, targetPosition, Grid.isAvailable(targetPosition) ? 0 : 1);
 		},
 		neighbor: (x: Vector3Component): Vector3Component[] =>
 		{
-			return getNeighbors(x, isValidPosition);
+			return getNeighbors(x);
 		},
 		distance: (a: Vector3Component, b: Vector3Component): number =>
 		{
@@ -83,8 +83,7 @@ export function calcPath(startingPosition: Vector3Component, targetPosition: Vec
 
 	return [];
 }
-function getNeighbors(startingPosition: Vector3Component,
-	isValidPosition: (position: Vector3Component) => boolean): Vector3Component[]
+function getNeighbors(startingPosition: Vector3Component): Vector3Component[]
 {
 	let neighbors: Vector3Component[] = [];
 
@@ -101,7 +100,7 @@ function getNeighbors(startingPosition: Vector3Component,
 	])
 	{
 		let position = add(startingPosition, neighborDirection);
-		if (!isValidPosition(position))
+		if (!Grid.isAvailable(position))
 		{
 			continue;
 		}

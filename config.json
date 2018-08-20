@@ -6,15 +6,43 @@
 	"baitType": "Cheese",
 	"prey": {
 		"animalType": "Cat",
-		"sneakSpeed": 70,
-		"sprintSpeed": 20
+		"blockedConfig": {
+			"minLength": 250,
+			"maxLength": 1000,
+			"oddsOfSitting": 0
+		},
+		"exitConfig": {
+			"moveSpeed": 800
+		},
+		"eatConfig": {
+			"eatRange": 1,
+			"huntConfig": {
+				"moveSpeed": 700
+			}
+		}
 	},
 	"predator": {
 		"animalType": "Dog",
-		"patrolRadius": 10,
-		"lookAroundSpeed": 120,
-		"lookRadius": 5,
-		"patrolSpeed": 50,
-		"attackSpeed": 40
+		"patrolConfig": {
+			"eatConfig": {
+				"eatRange": 1,
+				"huntConfig": {
+					"moveSpeed": 400
+				}
+			},
+			"idleConfig": {
+				"minLength": 500,
+				"maxLength": 7500,
+				"oddsOfSitting": 0.30
+			},
+			"wanderConfig": {
+				"moveSpeed": 600
+			},
+			"minRadius": 3,
+			"maxRadius": 10,
+			"chanceOfMoving": 0.7,
+			"preyType": "Cat",
+			"scanRadius": 6
+		}
 	}
 }
