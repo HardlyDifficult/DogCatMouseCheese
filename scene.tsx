@@ -52,22 +52,26 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		SceneHelper.updateGridWithStaticScenery();
 		Grid.set(this.state.baitProps.position);
 		this.spawnTrees();
-	
+
 		this.eventSubscriber.on("Entrance_click", e => this.onEntranceClick());
 		this.eventSubscriber.on("House_click", e => this.onHouseClick());
 		this.eventSubscriber.on("Exit_click", e => this.onExitClick());
 
 		this.eventSubscriber.on('renderAnimals', e => this.onRenderAnimals());
-		this.eventSubscriber.on('captureCheese', e => this.onCaptureBait()); 
+		this.eventSubscriber.on('captureCheese', e => this.onCaptureBait());
 		this.eventSubscriber.on('despawn', (animalId, delay) => this.onDespawn(animalId, delay));
 	}
 	spawnTrees()
 	{
 		let trees: ISceneryProps[] = [];
-		const range: number = config.trees.max - config.trees.min;
+		const range = config.trees.max - config.trees.min;
 		for (let i = 0; i < Math.random() * range + config.trees.min; i++)
 		{
-			const position = Grid.randomPosition(2, true); 
+			let position;
+			do
+			{
+				position = Grid.randomPosition(2, true);
+			} while (!Grid.hasClearance(position));
 			Grid.set(position);
 			trees.push({
 				position,
@@ -87,9 +91,11 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			config.prey.sneakSpeed);
 		if (animalProps)
 		{
-			AnimalStateMachine.pushState(new StateDespawn(animalProps, {}));
-			AnimalStateMachine.pushState(new StateGoTo(animalProps, SceneHelper.exitProps, config.prey.exitConfig, config.prey.blockedConfig));
-			AnimalStateMachine.pushState(new StateEat(animalProps, this.state.baitProps, config.prey.eatConfig, config.prey.blockedConfig));
+			AnimalStateMachine.pushStates([
+				new StateDespawn(animalProps, {}),
+				new StateGoTo(animalProps, SceneHelper.exitProps, config.prey.exitConfig, config.prey.blockedConfig),
+				new StateEat(animalProps, this.state.baitProps, config.prey.eatConfig, config.prey.blockedConfig),
+			]);
 		}
 	}
 	onHouseClick()
@@ -126,6 +132,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	}
 	async onCaptureBait()
 	{
+		await sleep(750);
 		this.state.baitProps.isVisible = false;
 		this.setState({ baitProps: this.state.baitProps });
 		await sleep(2000);
@@ -167,6 +174,8 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				{ animation: Animation.Idle, weight: 1 },
 				{ animation: Animation.Walk, weight: 0 },
 				{ animation: Animation.Drink, weight: 0 },
+				{ animation: Animation.Dead, weight: 0 },
+				{ animation: Animation.Run, weight: 0 },
 				{ animation: Animation.Sit, weight: 0 },
 			],
 			isDead: false,

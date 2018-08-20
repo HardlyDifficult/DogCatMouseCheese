@@ -9,7 +9,29 @@ function renderBase(props: IBaitProps)
 	}
 
 	return (
-		<box scale={{ x: 1, y: .1, z: 1 }} />
+		<entity>
+		<gltf-model
+			id="Cheese"
+			src="assets/Cheese.gltf"
+			rotation={{ x: 0, y: 0, z: 0 }}
+			position={{ x: -.2, y: 0, z: 0 }}
+			scale={.3}
+		/>
+		<gltf-model
+			id="Cheese"
+			src="assets/Cheese.gltf"
+			rotation={{ x: 0, y: 25, z: 0 }}
+			position={{ x: -.1, y: 0, z: .1 }}
+			scale={.3}
+		/>
+		<gltf-model
+			id="Cheese"
+			src="assets/Cheese.gltf"
+			rotation={{ x: 0, y: 60, z: 0 }}
+			position={{ x: -.2, y: 0, z: -.1 }}
+			scale={.3}
+		/>
+		</entity>
 	);
 }
 
@@ -19,11 +41,12 @@ export const Cheese = (props: IBaitProps) =>
 		<entity
 			id="CheeseParent"
 			position={props.position}
+			scale={1.5}
 		>
 			{renderBase(props)}
 			<gltf-model
 				id="Cheese"
-				src="assets/BlockDogBowl.gltf"
+				src="assets/Cheese.gltf"
 				rotation={{ x: 0, y: 90, z: 0 }}
 			/>
 		</entity>

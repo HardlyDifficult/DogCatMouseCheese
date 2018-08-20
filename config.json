@@ -5,7 +5,7 @@
 	},
 	"baitType": "Cheese",
 	"prey": {
-		"animalType": "Cat",
+		"animalType": "Mouse",
 		"blockedConfig": {
 			"minLength": 250,
 			"maxLength": 1000,
@@ -24,7 +24,7 @@
 		}
 	},
 	"predator": {
-		"animalType": "Dog",
+		"animalType": "Cat",
 		"patrolConfig": {
 			"eatConfig": {
 				"eatRange": 1.6,
@@ -43,7 +43,7 @@
 			"minRadius": 3,
 			"maxRadius": 10,
 			"chanceOfMoving": 0.7,
-			"preyType": "Cat",
+			"preyType": "Mouse",
 			"scanRadius": 6
 		}
 	}

@@ -18,26 +18,34 @@ export const Mouse = (props: IAnimalProps) =>
 			}}>
 			<gltf-model
 				id={props.id}
-				src="assets/BlockDog.gltf"
-				rotation={{ x: 0, y: 90, z: 0 }}
-				scale={.1 * props.scale}
+				src="assets/BlockMouse.gltf"
+				rotation={{ x: 0, y: -90, z: 0 }}
+				scale={props.scale}
 				skeletalAnimation={[
-					{
-						clip: "Idle",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Idle) || { weight: 0 }).weight
-					},
+					//{ no idle
+					//	clip: "Walking",
+					//	weight: (props.animationWeights.find(a => a.animation == Animation.Idle) || {weight: 0}).weight
+					//},
 					{
 						clip: "Walking",
 						weight: (props.animationWeights.find(a => a.animation == Animation.Walk) || { weight: 0 }).weight
+					},
+					{
+						clip: "Running",
+						weight: (props.animationWeights.find(a => a.animation == Animation.Run) || { weight: 0 }).weight
 					},
 					{
 						clip: "Sitting",
 						weight: (props.animationWeights.find(a => a.animation == Animation.Sit) || { weight: 0 }).weight
 					},
 					{
-						clip: "Drinking",
+						clip: "Eating",
 						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || { weight: 0 }).weight
 					},
+					{
+						clip: "Deaded",
+						weight: (props.animationWeights.find(a => a.animation == Animation.Dead) || { weight: 0 }).weight,
+					}
 				]}
 				transition={{
 					scale: {

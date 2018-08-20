@@ -1,4 +1,5 @@
 import { Vector3Component } from "metaverse-api";
+import { add } from "ts/MathHelper";
 
 export namespace Grid
 {
@@ -63,5 +64,42 @@ export namespace Grid
 		} while (!isAvailable(position) && mustBeAvailable);
 
 		return position;
+	}
+
+	export function getNeighbors(startingPosition: Vector3Component): Vector3Component[]
+	{
+		let neighbors: Vector3Component[] = [];
+
+		for (const neighborDirection of [
+			{ x: 1, y: 0, z: 0 },
+			{ x: -1, y: 0, z: 0 },
+			{ x: 0, y: 0, z: 1 },
+			{ x: 0, y: 0, z: -1 },
+			//If enabling diag, update the 'distance' above with a formula
+			//{ x: 1, y: 0, z: 1 },
+			//{ x: -1, y: 0, z: -1 },
+			//{ x: -1, y: 0, z: 1 },
+			//{ x: 1, y: 0, z: -1 },
+		])
+		{
+			let position = add(startingPosition, neighborDirection);
+			if (!isAvailable(position))
+			{
+				continue;
+			}
+			neighbors.push(position);
+		}
+
+		return neighbors;
+	}
+
+	export function hasClearance(position: Vector3Component): boolean
+	{
+		if (!isAvailable(position))
+		{
+			return false;
+		}
+
+		return getNeighbors(position).length == 4;
 	}
 }

@@ -61,6 +61,7 @@ export class StateEat extends AnimalState
 				EventManager.emit("captureCheese", this.prey.id, 1000);
 			}
 			this.animalProps.lookAtPosition = this.prey.position;
+			EventManager.emit("renderAnimals");
 			this.animate([
 				{ animation: Animation.Drink, for: 1500 },
 				{ animation: Animation.Idle, for: 500 },

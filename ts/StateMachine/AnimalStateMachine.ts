@@ -54,6 +54,34 @@ export namespace AnimalStateMachine
 		animalState.stateStack[animalState.stateStack.length - 1].start();
 	}
 
+	export function pushStates(states: AnimalState[])
+	{
+		let animalState = animalStates.find(s => s.animalProps.id == states[0].animalProps.id);
+		if (!animalState)
+		{
+			animalState = {
+				animalProps: states[0].animalProps,
+				stateStack: states,
+				animationInterval: undefined
+			};
+			animalStates.push(animalState);
+		}
+		else
+		{
+			const previousState = animalState.stateStack[animalState.stateStack.length - 1];
+			if (previousState)
+			{
+				previousState.stop();
+			}
+			for (const state of states)
+			{
+				animalState.stateStack.push(state);
+			}
+		}
+
+		animalState.stateStack[animalState.stateStack.length - 1].start();
+	}
+
 	export function popState(id: string)
 	{
 		const animalState = animalStates.find(s => s.animalProps.id == id);

@@ -1,0 +1,187 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5121,
+            "count" : 24,
+            "max" : [
+                17
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 18,
+            "max" : [
+                0.1260000765323639,
+                0.14400000870227814,
+                0.20292547345161438
+            ],
+            "min" : [
+                -0.12600001692771912,
+                -4.470348535789981e-09,
+                -0.1570747345685959
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 18,
+            "max" : [
+                0.94385826587677,
+                1.0,
+                0.3303506374359131
+            ],
+            "min" : [
+                -0.9438585042953491,
+                -1.0,
+                -1.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 18,
+            "max" : [
+                9.148903501454697e-08,
+                6.793013085371058e-08,
+                0.9438583254814148,
+                1.0
+            ],
+            "min" : [
+                -0.3303505778312683,
+                -1.0,
+                -0.9438585042953491,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 18,
+            "max" : [
+                0.9605087637901306,
+                0.9671113789081573
+            ],
+            "min" : [
+                0.027529269456863403,
+                0.029983937740325928
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 24,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 216,
+            "byteOffset" : 24,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 216,
+            "byteOffset" : 240,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 456,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 744,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 888,
+            "uri" : "Cheese.bin"
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "CheeseColour",
+            "uri" : "data:image/png;base64,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"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "CheeseMaterial",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "CheeseBlock",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "CheeseBlock"
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

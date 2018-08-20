@@ -61,7 +61,7 @@ export function calcPath(startingPosition: Vector3Component, targetPosition: Vec
 		},
 		neighbor: (x: Vector3Component): Vector3Component[] =>
 		{
-			return getNeighbors(x);
+			return Grid.getNeighbors(x);
 		},
 		distance: (a: Vector3Component, b: Vector3Component): number =>
 		{
@@ -82,32 +82,6 @@ export function calcPath(startingPosition: Vector3Component, targetPosition: Vec
 	}
 
 	return [];
-}
-function getNeighbors(startingPosition: Vector3Component): Vector3Component[]
-{
-	let neighbors: Vector3Component[] = [];
-
-	for (const neighborDirection of [
-		{ x: 1, y: 0, z: 0 },
-		{ x: -1, y: 0, z: 0 },
-		{ x: 0, y: 0, z: 1 },
-		{ x: 0, y: 0, z: -1 },
-		//If enabling diag, update the 'distance' above with a formula
-		//{ x: 1, y: 0, z: 1 },
-		//{ x: -1, y: 0, z: -1 },
-		//{ x: -1, y: 0, z: 1 },
-		//{ x: 1, y: 0, z: -1 },
-	])
-	{
-		let position = add(startingPosition, neighborDirection);
-		if (!Grid.isAvailable(position))
-		{
-			continue;
-		}
-		neighbors.push(position);
-	}
-
-	return neighbors;
 }
 
 // Other
