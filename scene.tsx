@@ -53,7 +53,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		Grid.set(this.state.baitProps.position);
 		this.spawnTrees();
 	
-
 		this.eventSubscriber.on("Entrance_click", e => this.onEntranceClick());
 		this.eventSubscriber.on("House_click", e => this.onHouseClick());
 		this.eventSubscriber.on("Exit_click", e => this.onExitClick());
@@ -74,7 +73,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				position,
 				rotation: { x: 0, y: Math.random() * 360, z: 0 }
 			});
-			break;
 		}
 		this.setState({ trees });
 	}
