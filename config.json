@@ -12,12 +12,14 @@
 			"oddsOfSitting": 0
 		},
 		"exitConfig": {
-			"moveSpeed": 800
+			"moveSpeed": 800,
+			"panicSpeed": 250
 		},
 		"eatConfig": {
-			"eatRange": 1,
+			"eatRange": 1.6,
 			"huntConfig": {
-				"moveSpeed": 700
+				"moveSpeed": 700,
+				"panicSpeed": 350
 			}
 		}
 	},
@@ -25,7 +27,7 @@
 		"animalType": "Dog",
 		"patrolConfig": {
 			"eatConfig": {
-				"eatRange": 1,
+				"eatRange": 1.6,
 				"huntConfig": {
 					"moveSpeed": 400
 				}

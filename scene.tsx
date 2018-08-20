@@ -22,7 +22,8 @@ import { StateEat } from 'ts/StateMachine/StateEat';
 import { StatePatrol } from 'ts/StateMachine/StatePatrol';
 import { StateGoTo } from 'ts/StateMachine/StateGoTo';
 import { StateDespawn } from 'ts/StateMachine/StateDespawn';
-//"sprintSpeed": 20, todo
+import { FenceCorner } from 'components/FenceCorner';
+
 export default class DogCatMouseCheese extends DCL.ScriptableScene
 {
 	// Data
@@ -58,7 +59,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		this.eventSubscriber.on("Exit_click", e => this.onExitClick());
 
 		this.eventSubscriber.on('renderAnimals', e => this.onRenderAnimals());
-		this.eventSubscriber.on('captureCheese', e => this.onCaptureBait()); // Confirm dead. use despawn instead
+		this.eventSubscriber.on('captureCheese', e => this.onCaptureBait()); 
 		this.eventSubscriber.on('despawn', (animalId, delay) => this.onDespawn(animalId, delay));
 	}
 	spawnTrees()
@@ -197,6 +198,13 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			return Fence(fence);
 		});
 	}
+	renderFenceCorners()
+	{
+		return SceneHelper.fenceCornerProps.map((fenceCorner) =>
+		{
+			return FenceCorner(fenceCorner);
+		});
+	}
 	renderBait()
 	{
 		if (this.state.baitProps.baitType == BaitType.Cheese)
@@ -235,6 +243,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				{this.renderAnimals()}
 				{this.renderTrees()}
 				{this.renderFence()}
+				{this.renderFenceCorners()}
 			</scene>
 		)
 	}

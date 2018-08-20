@@ -10,6 +10,7 @@ import { IStateIdleConfig, StateIdle } from "ts/StateMachine/StateIdle";
 export interface IStateGoToConfig
 {
 	moveSpeed: number;
+	panicSpeed?: number;
 }
 
 export class StateGoTo extends AnimalState
@@ -21,6 +22,7 @@ export class StateGoTo extends AnimalState
 	config: IStateGoToConfig;
 	blockedConfig?: IStateIdleConfig;
 	interval?: NodeJS.Timer = undefined;
+	inPanic: boolean = false;
 
 	constructor(animal: IAnimalProps, target: { position: Vector3Component, isDead?: boolean }, config: IStateGoToConfig, blockedConfig?: IStateIdleConfig)
 	{
@@ -38,7 +40,8 @@ export class StateGoTo extends AnimalState
 
 	start()
 	{
-		this.animalProps.moveDuration = this.config.moveSpeed;
+		const speed = this.inPanic ? (this.config.panicSpeed || this.config.moveSpeed) : this.config.moveSpeed;
+		this.animalProps.moveDuration = speed;
 		const targetPosition = this.target.position;
 		const path = calcPath(this.animalProps.position, targetPosition);
 		if (this.target.isDead || path.length <= 0)
@@ -53,7 +56,12 @@ export class StateGoTo extends AnimalState
 			}
 		}
 
-		let pathIndex = 0;
+		if (path.length == 1)
+		{
+			return AnimalStateMachine.popState(this.animalProps.id);
+		}
+
+		let pathIndex = 1;
 		this.interval = setInterval(() =>
 		{
 			let target = path[pathIndex];
@@ -70,18 +78,18 @@ export class StateGoTo extends AnimalState
 			{
 				return this.repath();
 			}
-			if (!equals(this.target.position, targetPosition))
-			{
-				return this.repath();
-			}
-
 			pathIndex++;
 			if (pathIndex >= path.length
 				|| this.target.isDead)
 			{
 				return AnimalStateMachine.popState(this.animalProps.id);
 			}
-		}, this.config.moveSpeed);
+
+			if (!equals(this.target.position, targetPosition))
+			{
+				return this.repath();
+			}
+		}, speed);
 	}
 
 	repath()
@@ -120,7 +128,19 @@ export class StateGoTo extends AnimalState
 			// DCL: Look past the target.  If this is near targetPosition it may not render
 			this.animalProps.lookAtPosition = add(targetPosition, mul(toTarget, 10));
 		}
-		AnimalStateMachine.changeAnimation(this.animalProps.id, Animation.Walk);
+		AnimalStateMachine.changeAnimation(this.animalProps.id, this.inPanic ? Animation.Run : Animation.Walk);
+	}
+
+	processMessage(message: string): boolean
+	{
+		if (message == "panic")
+		{
+			this.inPanic = true;
+			this.repath();
+			return true;
+		}
+
+		return super.processMessage(message);
 	}
 }
 

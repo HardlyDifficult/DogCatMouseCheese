@@ -19,6 +19,25 @@ export const groundProps: ISceneryProps = {
 	rotation: { x: 90, y: 0, z: 0 }
 };
 export const fenceProps: ISceneryProps[] = [];
+export const fenceCornerProps: ISceneryProps[] = [
+	// TODO fence corners model alignment looks off
+	//{  
+	//	position: { x: 10, y: 0, z: 15 },
+	//	rotation: { x: 0, y: 180, z: 0 }
+	//},
+	//{
+	//	position: { x: 25, y: 0, z: 15},
+	//	rotation: { x: 0, y: 180, z: 0 }
+	//},
+	//{
+	//	position: { x: 9, y: 0, z: 3.5 },
+	//	rotation: { x: 0, y: 0, z: 0 }
+	//},
+	//{
+	//	position: { x: 25, y: 0, z: 5 },
+	//	rotation: { x: 0, y: 180, z: 0 }
+	//},
+];
 for (let x = 10; x < 25; x += 2)
 { // Front 
 	if (x == 12)

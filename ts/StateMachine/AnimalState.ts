@@ -37,10 +37,6 @@ export class AnimalState
 			then();
 			return;
 		}
-		if (steps[stepNumber].for <= 0)
-		{
-			throw new Error("Invalid sleep time");
-		}
 
 		AnimalStateMachine.changeAnimation(this.animalProps.id, steps[stepNumber].animation);
 		this.animationTimeout = setTimeout(() =>

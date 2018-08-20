@@ -24,8 +24,10 @@ export enum Animation
 {
 	Idle,
 	Walk,
+	Run,
 	Sit,
-	Drink
+	Drink,
+	Dead
 }
 
 export enum AnimalType
@@ -45,33 +47,5 @@ export interface IAnimalProps
 	animationWeights: { animation: Animation, weight: number }[], // copy
 	isDead: boolean,// remove
 	scale: number,
-}
-
-export function getAnimationWeights(animalProps: IAnimalProps): { idle: number, walk: number, sit: number, drink: number }
-{
-	let idle = 0;
-	let walk = 0;
-	let sit = 0;
-	let drink = 0;
-	for (const animation of animalProps.animationWeights)
-	{
-		switch (animation.animation)
-		{
-			case Animation.Idle:
-				idle = animation.weight;
-				break;
-			case Animation.Walk:
-				walk = animation.weight;
-				break;
-			case Animation.Sit:
-				sit = animation.weight;
-				break;
-			case Animation.Drink:
-				drink = animation.weight;
-				break;
-		}
-	}
-
-	return { idle, walk, sit, drink };
 }
 

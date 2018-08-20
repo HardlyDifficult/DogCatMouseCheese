@@ -54,12 +54,11 @@ export class StateEat extends AnimalState
 				if (animal)
 				{
 					AnimalStateMachine.pushState(new StateDespawn(animal, { delay: 1000 }))
-					console.log("yum");
 				}
 			}
 			else
 			{
-				EventManager.emit("despawn", this.prey.id, 1000); // TODO for cheese
+				EventManager.emit("captureCheese", this.prey.id, 1000);
 			}
 			this.animalProps.lookAtPosition = this.prey.position;
 			this.animate([
@@ -74,6 +73,10 @@ export class StateEat extends AnimalState
 		}
 		else
 		{
+			if (this.prey.isDead !== undefined)
+			{
+				AnimalStateMachine.sendMessage(this.prey.id, "panic");
+			}
 			AnimalStateMachine.pushState(new StateGoTo(this.animalProps, this.prey, this.config.huntConfig, this.blockedConfig));
 		}
 	}

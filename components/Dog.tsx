@@ -1,10 +1,8 @@
 import * as DCL from 'metaverse-api'
-import { IAnimalProps, getAnimationWeights } from '../ts/SharedProperties';
+import { IAnimalProps, Animation } from '../ts/SharedProperties';
 
 export const Dog = (props: IAnimalProps) =>
 {
-	const weights = getAnimationWeights(props);
-
 	return (
 		<entity
 			id={props.id + "parent"}
@@ -26,20 +24,20 @@ export const Dog = (props: IAnimalProps) =>
 				skeletalAnimation={[
 					{
 						clip: "Idle",
-						weight: weights.idle,
+						weight: (props.animationWeights.find(a => a.animation == Animation.Idle) || { weight: 0 }).weight
 					},
 					{
 						clip: "Walking",
-						weight: weights.walk,
+						weight: (props.animationWeights.find(a => a.animation == Animation.Walk) || { weight: 0 }).weight
 					},
 					{
 						clip: "Sitting",
-						weight: weights.sit,
+						weight: (props.animationWeights.find(a => a.animation == Animation.Sit) || { weight: 0 }).weight
 					},
 					{
 						clip: "Drinking",
-						weight: weights.drink,
-					}
+						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || { weight: 0 }).weight
+					},
 				]}
 				transition={{
 					scale: {

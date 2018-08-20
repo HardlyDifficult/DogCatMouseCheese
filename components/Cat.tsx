@@ -1,10 +1,9 @@
 import * as DCL from 'metaverse-api'
-import { IAnimalProps, getAnimationWeights } from '../ts/SharedProperties';
+import { IAnimalProps, Animation } from '../ts/SharedProperties';
 
 export const Cat = (props: IAnimalProps) =>
 {
 	// DCL: why does this fail without an ID on the parent 'entity'?
-	const weights = getAnimationWeights(props);
 	return (
 		<entity
 			id={props.id + "parent"}
@@ -26,19 +25,27 @@ export const Cat = (props: IAnimalProps) =>
 				skeletalAnimation={[
 					{
 						clip: "Idle",
-						weight: weights.idle,
+						weight: (props.animationWeights.find(a => a.animation == Animation.Idle) || {weight: 0}).weight
 					},
 					{
-						clip: "Walking",
-						weight: weights.walk,
+						clip: "Walking", 
+						weight: (props.animationWeights.find(a => a.animation == Animation.Walk) || {weight: 0}).weight
+					},
+					{
+						clip: "Walking", // TODO model does not support this yet
+						weight: (props.animationWeights.find(a => a.animation == Animation.Run) || {weight: 0}).weight 
 					},
 					{
 						clip: "Sitting",
-						weight: weights.sit,
+						weight: (props.animationWeights.find(a => a.animation == Animation.Sit) || {weight: 0}).weight
 					},
 					{
-						clip: "Drinking",
-						weight: weights.drink,
+						clip: "Eating",
+						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || {weight: 0}).weight
+					},
+					{
+						clip: "Deaded", // TODO model does not support this yet
+						weight: (props.animationWeights.find(a => a.animation == Animation.Dead) || { weight: 0 }).weight, 
 					}
 				]}
 				transition={{

@@ -1,6 +1,5 @@
 import { AnimalState } from "ts/StateMachine/AnimalState";
-import { IAnimalProps } from "ts/SharedProperties";
-import { setTimeout, clearTimeout } from "timers";
+import { IAnimalProps, Animation } from "ts/SharedProperties";
 import { EventManager } from "ts/EventManager";
 
 export interface IStateDespawnConfig
@@ -21,20 +20,17 @@ export class StateDespawn extends AnimalState
 
 	start()
 	{
-		this.timeout = setTimeout(() => this.despawn(), this.config.delay || 0);
-	}
-
-	stop()
-	{
-		if (this.timeout)
-		{
-			clearTimeout(this.timeout);
-		}
+		this.animate([{ animation: Animation.Dead, for: this.config.delay || 0 }], () => this.despawn());
 	}
 
 	despawn()
 	{
 		EventManager.emit("despawn", this.animalProps.id);
+	}
+
+	processMessage(message: string): boolean
+	{
+		return true;
 	}
 }
 

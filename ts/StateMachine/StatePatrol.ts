@@ -76,4 +76,9 @@ export class StatePatrol extends AnimalState
 
 		return null;
 	}
+
+	processMessage(message: string): boolean
+	{ 
+		return true;
+	}
 }
