@@ -23,18 +23,18 @@ export const Cat = (props: IAnimalProps) =>
 				rotation={{ x: 0, y: -90, z: 0 }}
 				scale={props.scale}
 				skeletalAnimation={[
-					{
-						clip: "Idle",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Idle) || {weight: 0}).weight
-					},
+					//{
+					//	clip: "Walking",
+					//	weight: (props.animationWeights.find(a => a.animation == Animation.Idle) || {weight: 0}).weight
+					//},
 					{
 						clip: "Walking", 
 						weight: (props.animationWeights.find(a => a.animation == Animation.Walk) || {weight: 0}).weight
 					},
-					{
-						clip: "Walking", // TODO model does not support this yet
-						weight: (props.animationWeights.find(a => a.animation == Animation.Run) || {weight: 0}).weight 
-					},
+					//{
+					//	clip: "Walking", // TODO model does not support this yet
+					//	weight: (props.animationWeights.find(a => a.animation == Animation.Run) || {weight: 0}).weight 
+					//},
 					{
 						clip: "Sitting",
 						weight: (props.animationWeights.find(a => a.animation == Animation.Sit) || {weight: 0}).weight
@@ -44,7 +44,7 @@ export const Cat = (props: IAnimalProps) =>
 						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || {weight: 0}).weight
 					},
 					{
-						clip: "Deaded", // TODO model does not support this yet
+						clip: "Idle", // TODO model does not support this yet
 						weight: (props.animationWeights.find(a => a.animation == Animation.Dead) || { weight: 0 }).weight, 
 					}
 				]}
