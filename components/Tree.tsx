@@ -7,7 +7,7 @@ export const Tree = (props: ISceneryProps) =>
 		<gltf-model
 			id={"tree" + props.position.x + props.position.z}
 			position={props.position}
-			src="assets/BlobMonster/BlobMonster.gltf"
+			src="assets/Tree.gltf"
 			rotation={props.rotation}
 		/>
 	)

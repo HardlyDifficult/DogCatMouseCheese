@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "C:\\Users\\lopop\\AppData\\Local\\Temp\\0.5098548389826443.WebWorker.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "C:\\Users\\lopop\\AppData\\Local\\Temp\\0.6387655079020269.WebWorker.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -226,7 +226,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Tree\", function() { return Tree; });\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! metaverse-api */ \"./node_modules/metaverse-api/lib/index.js\");\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(metaverse_api__WEBPACK_IMPORTED_MODULE_0__);\n\nconst Tree = (props) => {\n    return (metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"](\"gltf-model\", { id: \"tree\" + props.position.x + props.position.z, position: props.position, src: \"assets/BlobMonster/BlobMonster.gltf\", rotation: props.rotation }));\n};\n\n\n//# sourceURL=webpack:///./components/Tree.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Tree\", function() { return Tree; });\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! metaverse-api */ \"./node_modules/metaverse-api/lib/index.js\");\n/* harmony import */ var metaverse_api__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(metaverse_api__WEBPACK_IMPORTED_MODULE_0__);\n\nconst Tree = (props) => {\n    return (metaverse_api__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"](\"gltf-model\", { id: \"tree\" + props.position.x + props.position.z, position: props.position, src: \"assets/Tree.gltf\", rotation: props.rotation }));\n};\n\n\n//# sourceURL=webpack:///./components/Tree.tsx?");
 
 /***/ }),
 
@@ -1122,15 +1122,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "C:\\Users\\lopop\\AppData\\Local\\Temp\\0.5098548389826443.WebWorker.js":
+/***/ "C:\\Users\\lopop\\AppData\\Local\\Temp\\0.6387655079020269.WebWorker.js":
 /*!*************************************************************************!*\
-  !*** C:/Users/lopop/AppData/Local/Temp/0.5098548389826443.WebWorker.js ***!
+  !*** C:/Users/lopop/AppData/Local/Temp/0.6387655079020269.WebWorker.js ***!
   \*************************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var D_DogCatMouseCheese_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/metaverse-rpc/lib/common/transports/WebWorker */ \"./node_modules/metaverse-rpc/lib/common/transports/WebWorker.js\");\n\n\nconst imported = __webpack_require__(/*! ./scene.tsx */ \"./scene.tsx\")\n\nif (imported && imported.__esModule && imported['default']) {\n  new imported['default'](Object(D_DogCatMouseCheese_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__[\"WebWorkerTransport\"])(self))\n}\n\n\n//# sourceURL=webpack:///C:/Users/lopop/AppData/Local/Temp/0.5098548389826443.WebWorker.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var D_DogCatMouseCheese_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/metaverse-rpc/lib/common/transports/WebWorker */ \"./node_modules/metaverse-rpc/lib/common/transports/WebWorker.js\");\n\n\nconst imported = __webpack_require__(/*! ./scene.tsx */ \"./scene.tsx\")\n\nif (imported && imported.__esModule && imported['default']) {\n  new imported['default'](Object(D_DogCatMouseCheese_node_modules_metaverse_rpc_lib_common_transports_WebWorker__WEBPACK_IMPORTED_MODULE_0__[\"WebWorkerTransport\"])(self))\n}\n\n\n//# sourceURL=webpack:///C:/Users/lopop/AppData/Local/Temp/0.6387655079020269.WebWorker.js?");
 
 /***/ })
 
