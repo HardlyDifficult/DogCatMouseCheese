@@ -40,7 +40,7 @@ export const Mouse = (props: IAnimalProps) =>
 					},
 					{
 						clip: "Eating",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || { weight: 0 }).weight + (props.animationWeights.find(a => a.animation == Animation.Sit) || { weight: 0 }).weight
 					},
 					{
 						clip: "Deaded",

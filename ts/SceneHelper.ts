@@ -19,44 +19,53 @@ export const groundProps: ISceneryProps = {
 	rotation: { x: 90, y: 0, z: 0 }
 };
 export const fenceProps: ISceneryProps[] = [];
-export const fenceCornerProps: ISceneryProps[] = [
-	// TODO fence corners model alignment looks off
-	//{  
-	//	position: { x: 10, y: 0, z: 15 },
-	//	rotation: { x: 0, y: 180, z: 0 }
-	//},
-	//{
-	//	position: { x: 25, y: 0, z: 15},
-	//	rotation: { x: 0, y: 180, z: 0 }
-	//},
-	//{
-	//	position: { x: 9, y: 0, z: 3.5 },
-	//	rotation: { x: 0, y: 0, z: 0 }
-	//},
-	//{
-	//	position: { x: 25, y: 0, z: 5 },
-	//	rotation: { x: 0, y: 180, z: 0 }
-	//},
+export const fenceSpinnerProps: ISceneryProps[] = [
+	{
+		position: { x: 11, y: 0, z: 3 },
+		rotation: { x: 0, y: 0, z: 0 }
+	},
+	{
+		position: { x: 17, y: 0, z: 15 },
+		rotation: { x: 0, y: 180, z: 0 }
+	},
 ];
-for (let x = 10; x < 25; x += 2)
+export const fenceCornerProps: ISceneryProps[] = [
+	{
+		position: { x: 10, y: 0, z: 3 },
+		rotation: { x: 0, y: 0, z: 0 }
+	},
+	{
+		position: { x: 9, y: 0, z: 14 },
+		rotation: { x: 0, y: 90, z: 0 }
+	},
+	{
+		position: { x: 24, y: 0, z: 15 },
+		rotation: { x: 0, y: 180, z: 0 }
+	},
+	{
+		position: { x: 25, y: 0, z: 4 },
+		rotation: { x: 0, y: 270, z: 0 }
+	},
+];
+for (let x = 11; x < 25; x += 2)
 { // Front 
-	if (x == 12)
+	if (x == 17)
 	{
 		continue;
 	}
 	fenceProps.push({
-		position: { x, y: 0, z: 14.5 },
+		position: { x, y: 0, z: 15 },
 		rotation: { x: 0, y: 180, z: 0 }
 	});
 }
-for (let x = 10; x < 25; x += 2)
+for (let x = 11; x < 25; x += 2)
 { // Back 
-	if (x == 16)
+	if (x == 11)
 	{
 		continue;
 	}
 	fenceProps.push({
-		position: { x, y: 0, z: 3.5 },
+		position: { x, y: 0, z: 3 },
 		rotation: { x: 0, y: 0, z: 0 }
 	});
 }
@@ -67,12 +76,12 @@ for (let z = 5; z < 15; z += 2)
 		rotation: { x: 0, y: 270, z: 0 }
 	});
 }
-for (let z = 5; z < 15; z += 2)
+for (let z = 5; z < 14; z += 2)
 { // Left
-	if (z == 11)
-	{
-		continue;
-	}
+	//if (z == 11)
+	//{
+	//	continue;
+	//}
 	fenceProps.push({
 		position: { x: 9, y: 0, z },
 		rotation: { x: 0, y: 90, z: 0 }
@@ -94,6 +103,24 @@ export function updateGridWithStaticScenery()
 			Grid.set(add(fence.position, { x: 0, y: 0, z: 1 }), true);
 			Grid.set(add(fence.position, { x: 0, y: 0, z: -1 }), true);
 		}
+	}
+	for (const corner of fenceCornerProps)
+	{
+		Grid.set(corner.position, true);
+		if (corner.rotation.y == 0 || corner.rotation.y == 180)
+		{
+			Grid.set(add(corner.position, { x: 1, y: 0, z: 0 }), true);
+			Grid.set(add(corner.position, { x: -1, y: 0, z: 0 }), true);
+		}
+		else
+		{
+			Grid.set(add(corner.position, { x: 0, y: 0, z: 1 }), true);
+			Grid.set(add(corner.position, { x: 0, y: 0, z: -1 }), true);
+		}
+	}
+	for (const spinner of fenceSpinnerProps)
+	{
+		Grid.clear(spinner.position, true);
 	}
 	for (let x = -1; x <= 1; x++)
 	{

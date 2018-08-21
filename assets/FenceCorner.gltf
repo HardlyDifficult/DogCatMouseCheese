@@ -3,9 +3,9 @@
         {
             "bufferView" : 0,
             "componentType" : 5121,
-            "count" : 252,
+            "count" : 228,
             "max" : [
-                175
+                157
             ],
             "min" : [
                 0
@@ -15,23 +15,23 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 176,
+            "count" : 158,
             "max" : [
                 1.0,
                 4.030122756958008,
                 5.960464477539063e-08
             ],
             "min" : [
-                -0.2000000774860382,
+                0.024875864386558533,
                 0.017315149307250977,
-                -1.2120376825332642
+                -0.9996270537376404
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 176,
+            "count" : 158,
             "max" : [
                 1.0,
                 1.0,
@@ -47,7 +47,7 @@
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 176,
+            "count" : 158,
             "max" : [
                 1.0,
                 1.0,
@@ -65,7 +65,7 @@
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 176,
+            "count" : 158,
             "max" : [
                 0.9576603770256042,
                 0.9840936958789825
@@ -84,38 +84,38 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 252,
+            "byteLength" : 228,
             "byteOffset" : 0,
             "target" : 34963
         },
         {
             "buffer" : 0,
-            "byteLength" : 2112,
-            "byteOffset" : 252,
+            "byteLength" : 1896,
+            "byteOffset" : 228,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 2112,
-            "byteOffset" : 2364,
+            "byteLength" : 1896,
+            "byteOffset" : 2124,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 2816,
-            "byteOffset" : 4476,
+            "byteLength" : 2528,
+            "byteOffset" : 4020,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 1408,
-            "byteOffset" : 7292,
+            "byteLength" : 1264,
+            "byteOffset" : 6548,
             "target" : 34962
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 8700,
+            "byteLength" : 7812,
             "uri" : "FenceCorner.bin"
         }
     ],
@@ -163,7 +163,12 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Fence"
+            "name" : "Fence",
+            "translation" : [
+                -1.0,
+                0.0,
+                -0.0
+            ]
         }
     ],
     "samplers" : [

@@ -29,7 +29,7 @@ export function equals(a: Vector3Component | null, b: Vector3Component | null): 
 }
 export function approxEquals(a: Vector3Component, b: Vector3Component): boolean
 {
-	return a.x - b.x < 1 && a.y - b.y < 1 && a.z - b.z < 1;
+	return lengthSquared(subtract(a, b)) < 1;
 }
 export function round(a: Vector3Component): Vector3Component
 {
@@ -75,6 +75,7 @@ export function calcPath(startingPosition: Vector3Component, targetPosition: Vec
 		{
 			return JSON.stringify(x);
 		},
+		timeout: 5
 	});
 	if (results.status == "success")
 	{

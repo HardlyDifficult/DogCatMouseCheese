@@ -1,5 +1,6 @@
 import { Vector3Component } from "metaverse-api";
 import { add } from "ts/MathHelper";
+import { EventManager } from "ts/EventManager";
 
 export namespace Grid
 {
@@ -20,6 +21,7 @@ export namespace Grid
 
 	export function set(position: Vector3Component, canBeOccupiedAlready: boolean = false)
 	{
+		EventManager.emit("gridCellSet", position);
 		const x = Math.round(position.x);
 		const z = Math.round(position.z);
 		if (grid[x][z] && !canBeOccupiedAlready)
@@ -29,11 +31,11 @@ export namespace Grid
 		grid[x][z] = true;
 	}
 
-	export function clear(position: Vector3Component)
+	export function clear(position: Vector3Component, canBeEmpty: boolean = false)
 	{
 		const x = Math.round(position.x);
 		const z = Math.round(position.z);
-		if (!grid[x][z])
+		if (!grid[x][z] && !canBeEmpty)
 		{
 			throw new Error("Grid cell wasn't set");
 		}
@@ -93,13 +95,29 @@ export namespace Grid
 		return neighbors;
 	}
 
-	export function hasClearance(position: Vector3Component): boolean
+	export function hasClearance(position: Vector3Component, range: number): boolean
 	{
 		if (!isAvailable(position))
 		{
 			return false;
 		}
+		const neighbors = getNeighbors(position);
+		if (neighbors.length < 4)
+		{
+			return false;
+		}
 
-		return getNeighbors(position).length == 4;
+		if (range > 1)
+		{
+			for (const neighbor of neighbors)
+			{
+				if (!hasClearance(neighbor, range - 1))
+				{
+					return false;
+				}
+			}
+		}
+
+		return true;
 	}
 }

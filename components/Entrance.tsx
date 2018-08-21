@@ -7,7 +7,7 @@ export const Entrance = (props: ISceneryProps) =>
 		<gltf-model
 			id="Entrance"
 			position={props.position}
-			src="assets/Archway/StoneArchway.gltf"
+			src="assets/DirtMound.gltf"
 			rotation={props.rotation}
 		/>
 	)

@@ -14,7 +14,7 @@ import { House } from 'components/House';
 import { Fence } from 'components/Fence';
 import { Ground } from 'components/Ground';
 import { Catnip } from 'components/Catnip';
-import { sleep, add } from 'ts/MathHelper';
+import { sleep, add, approxEquals } from 'ts/MathHelper';
 import { Grid } from 'ts/Grid';
 import { EventManager } from 'ts/EventManager';
 import { AnimalStateMachine } from 'ts/StateMachine/AnimalStateMachine';
@@ -23,6 +23,7 @@ import { StatePatrol } from 'ts/StateMachine/StatePatrol';
 import { StateGoTo } from 'ts/StateMachine/StateGoTo';
 import { StateDespawn } from 'ts/StateMachine/StateDespawn';
 import { FenceCorner } from 'components/FenceCorner';
+import { FenceSpinner, SpinState } from 'components/FenceSpinner';
 
 export default class DogCatMouseCheese extends DCL.ScriptableScene
 {
@@ -31,13 +32,15 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	state: {
 		animals: IAnimalProps[],
 		trees: ISceneryProps[],
+		fenceSpinState: SpinState[],
 		baitProps: IBaitProps,
 	} = {
 			animals: [],
 			trees: [],
+			fenceSpinState: [SpinState.None, SpinState.None],
 			baitProps: {
 				id: config.baitType,
-				position: { x: 21, y: 0, z: 12 },
+				position: { x: 21, y: 0, z: 5 },
 				isVisible: true,
 				baitType: BaitType[this.baitType]
 			},
@@ -52,6 +55,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		SceneHelper.updateGridWithStaticScenery();
 		Grid.set(this.state.baitProps.position);
 		this.spawnTrees();
+		//this.renderGrid(); // for testing
 
 		this.eventSubscriber.on("Entrance_click", e => this.onEntranceClick());
 		this.eventSubscriber.on("House_click", e => this.onHouseClick());
@@ -60,23 +64,53 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		this.eventSubscriber.on('renderAnimals', e => this.onRenderAnimals());
 		this.eventSubscriber.on('captureCheese', e => this.onCaptureBait());
 		this.eventSubscriber.on('despawn', (animalId, delay) => this.onDespawn(animalId, delay));
+		this.eventSubscriber.on('gridCellSet', cell => this.onGridCellSet(cell));
 	}
 	spawnTrees()
 	{
 		let trees: ISceneryProps[] = [];
 		const range = config.trees.max - config.trees.min;
+		let counter = 0;
 		for (let i = 0; i < Math.random() * range + config.trees.min; i++)
 		{
 			let position;
 			do
 			{
 				position = Grid.randomPosition(2, true);
-			} while (!Grid.hasClearance(position));
+				if (counter++ > 500)
+				{ // Don't get stuck working too hard
+					break;
+				}
+			} while (!Grid.hasClearance(position, 4));
 			Grid.set(position);
+
 			trees.push({
 				position,
-				rotation: { x: 0, y: Math.random() * 360, z: 0 }
+				rotation: { x: 0, y: Math.random() * 360, z: 0 },
+				scale: { x: 1, y: Math.random() * .4 + 1, z: 1 }
 			});
+		}
+		this.setState({ trees });
+	}
+	renderGrid()
+	{
+		let trees: ISceneryProps[] = [];
+		for (let x = 0; x < 30; x++)
+		{
+			for (let z = 0; z < 30; z++)
+			{
+				let position = { x, y: 0, z };
+				if (Grid.isAvailable(position))
+				{
+					continue;
+				}
+
+				trees.push({
+					position,
+					rotation: { x: 0, y: Math.random() * 360, z: 0 },
+					scale: { x: 1, y: Math.random() * .4 + 1, z: 1 }
+				});
+			}
 		}
 		this.setState({ trees });
 	}
@@ -92,7 +126,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		if (animalProps)
 		{
 			AnimalStateMachine.pushStates([
-				new StateDespawn(animalProps, {}),
+				new StateDespawn(animalProps, {delay: 1000}),
 				new StateGoTo(animalProps, SceneHelper.exitProps, config.prey.exitConfig, config.prey.blockedConfig),
 				new StateEat(animalProps, this.state.baitProps, config.prey.eatConfig, config.prey.blockedConfig),
 			]);
@@ -149,6 +183,33 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			await sleep(delay);
 			Grid.clear(animal.position);
 			this.setState({ animals: this.state.animals.filter((a) => a.id != animal.id) });
+		}
+	}
+	async onGridCellSet(position: Vector3Component)
+	{
+		let index = -1;
+		for (let i = 0; i < SceneHelper.fenceSpinnerProps.length; i++)
+		{
+			if (approxEquals(position, SceneHelper.fenceSpinnerProps[i].position))
+			{
+				index = i;
+				break;
+			}
+		}
+		if (index >= 0)
+		{
+			let fenceSpinState = this.state.fenceSpinState.slice();
+			if (fenceSpinState[index] != SpinState.None)
+			{ // One at a time to keep the animation timing
+				return;
+			}
+			// Note this is not always correct..
+			fenceSpinState[index] = index == 0 ? SpinState.Enter : SpinState.Exit; 
+			this.setState({ fenceSpinState });
+			await sleep(75 * 1000 / 25);
+			fenceSpinState = this.state.fenceSpinState.slice();
+			fenceSpinState[index] = SpinState.None;
+			this.setState({ fenceSpinState });
 		}
 	}
 
@@ -212,6 +273,13 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			return FenceCorner(fenceCorner);
 		});
 	}
+	renderFenceSpinners()
+	{
+		return SceneHelper.fenceSpinnerProps.map((fenceSpinner, index) =>
+		{// this.state.fenceCount[index] todo
+			return FenceSpinner({ id: 1, sceneProps: fenceSpinner, spinState: this.state.fenceSpinState[index] });
+		});
+	}
 	renderBait()
 	{
 		if (this.state.baitProps.baitType == BaitType.Cheese)
@@ -251,6 +319,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				{this.renderTrees()}
 				{this.renderFence()}
 				{this.renderFenceCorners()}
+				{this.renderFenceSpinners()}
 			</scene>
 		)
 	}

@@ -9,6 +9,7 @@ export const Tree = (props: ISceneryProps) =>
 			position={props.position}
 			src="assets/Tree.gltf"
 			rotation={props.rotation}
+			scale={props.scale}
 		/>
 	)
 }

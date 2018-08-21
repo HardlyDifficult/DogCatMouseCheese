@@ -4,6 +4,7 @@ export interface ISceneryProps
 {
 	position: Vector3Component,
 	rotation: Vector3Component,
+	scale?: Vector3Component
 }
 
 export enum BaitType
