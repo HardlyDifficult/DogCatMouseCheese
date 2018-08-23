@@ -19,7 +19,7 @@ export const FenceSpinner = (props: IFenceProps) =>
 {
 	return (
 		<gltf-model
-			id={"FenceSpinner" +props.id  + props.sceneProps.position.x + props.sceneProps.position.z}
+			id={"FenceSpinner" + props.id + props.sceneProps.position.x + props.sceneProps.position.z}
 			position={props.sceneProps.position}
 			src="assets/FenceSpinner.gltf"
 			rotation={props.sceneProps.rotation}
