@@ -1,8 +1,5 @@
 import { Vector3Component } from 'metaverse-api';
-import { Grid } from 'ts/Grid';
-const aStar = require('a-star');
 
-// Vector3 
 export function add(a: Vector3Component, b: Vector3Component): Vector3Component
 {
 	return { x: a.x + b.x, y: a.y + b.y, z: a.z + b.z };
@@ -49,43 +46,6 @@ export function inSphere(position: Vector3Component, target: Vector3Component, r
 	return lengthSquared(delta) <= radius * radius;
 }
 
-// Pathfinding
-export function calcPath(startingPosition: Vector3Component, targetPosition: Vector3Component): Vector3Component[]
-{
-	targetPosition = round(targetPosition);
-	const results = aStar({
-		start: round(startingPosition),
-		isEnd: (n: Vector3Component): boolean =>
-		{
-			return inSphere(n, targetPosition, Grid.isAvailable(targetPosition) ? 0 : 1);
-		},
-		neighbor: (x: Vector3Component): Vector3Component[] =>
-		{
-			return Grid.getNeighbors(x);
-		},
-		distance: (a: Vector3Component, b: Vector3Component): number =>
-		{
-			return 1;
-		},
-		heuristic: (x: Vector3Component): number =>
-		{
-			return lengthSquared(subtract(x, targetPosition));
-		},
-		hash: (x: Vector3Component): string =>
-		{
-			return JSON.stringify(x);
-		},
-		timeout: 5
-	});
-	if (results.status == "success")
-	{
-		return results.path;
-	}
-
-	return [];
-}
-
-// Other
 export function sleep(ms: number): Promise<void> 
 {
 	return new Promise(resolve => setTimeout(resolve, ms));

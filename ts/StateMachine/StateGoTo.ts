@@ -2,7 +2,7 @@ import { Vector3Component } from "metaverse-api";
 import { AnimalState } from "ts/StateMachine/AnimalState";
 import { IAnimalProps, Animation } from "ts/SharedProperties";
 import { setInterval, clearInterval } from "timers";
-import { subtract, isZero, calcPath, add, div, equals, lengthSquared, mul } from "ts/MathHelper";
+import { subtract, isZero, add, div, equals, lengthSquared, mul } from "ts/MathHelper";
 import { AnimalStateMachine } from "ts/StateMachine/AnimalStateMachine";
 import { Grid } from "ts/Grid";
 import { IStateIdleConfig, StateIdle } from "ts/StateMachine/StateIdle";
@@ -43,7 +43,7 @@ export class StateGoTo extends AnimalState
 		const speed = this.inPanic ? (this.config.panicSpeed || this.config.moveSpeed) : this.config.moveSpeed;
 		this.animalProps.moveDuration = speed;
 		const targetPosition = this.target.position;
-		const path = calcPath(this.animalProps.position, targetPosition);
+		const path = Grid.calcPath(this.animalProps.position, targetPosition);
 		if (this.target.isDead || path.length <= 0)
 		{
 			if (this.blockedConfig && !this.target.isDead)

@@ -1,6 +1,7 @@
 import { Vector3Component } from "metaverse-api";
-import { add } from "ts/MathHelper";
+import { add, round, inSphere, lengthSquared, subtract } from "ts/MathHelper";
 import { EventManager } from "ts/EventManager";
+const aStar = require('a-star');
 
 export namespace Grid
 {
@@ -119,5 +120,40 @@ export namespace Grid
 		}
 
 		return true;
+	}
+
+	export function calcPath(startingPosition: Vector3Component, targetPosition: Vector3Component): Vector3Component[]
+	{
+		targetPosition = round(targetPosition);
+		const results = aStar({
+			start: round(startingPosition),
+			isEnd: (n: Vector3Component): boolean =>
+			{
+				return inSphere(n, targetPosition, Grid.isAvailable(targetPosition) ? 0 : 1);
+			},
+			neighbor: (x: Vector3Component): Vector3Component[] =>
+			{
+				return Grid.getNeighbors(x);
+			},
+			distance: (a: Vector3Component, b: Vector3Component): number =>
+			{
+				return 1;
+			},
+			heuristic: (x: Vector3Component): number =>
+			{
+				return lengthSquared(subtract(x, targetPosition));
+			},
+			hash: (x: Vector3Component): string =>
+			{
+				return JSON.stringify(x);
+			},
+			timeout: 5
+		});
+		if (results.status == "success")
+		{
+			return results.path;
+		}
+
+		return [];
 	}
 }
