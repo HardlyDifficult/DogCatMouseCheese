@@ -276,8 +276,8 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 	renderFenceSpinners()
 	{
 		return SceneHelper.fenceSpinnerProps.map((fenceSpinner, index) =>
-		{// this.state.fenceCount[index] todo
-			return FenceSpinner({ id: 1, sceneProps: fenceSpinner, spinState: this.state.fenceSpinState[index] });
+		{
+			return FenceSpinner({ id: index, sceneProps: fenceSpinner, spinState: this.state.fenceSpinState[index] });
 		});
 	}
 	renderBait()

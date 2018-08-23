@@ -15,8 +15,6 @@ export interface IFenceProps
 	spinState: SpinState
 }
 
-
-// DCL: How-to reset the animation with each play?
 export const FenceSpinner = (props: IFenceProps) =>
 {
 	return (

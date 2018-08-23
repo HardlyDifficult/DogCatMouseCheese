@@ -3,7 +3,6 @@ import { IAnimalProps, Animation } from '../ts/SharedProperties';
 
 export const Cat = (props: IAnimalProps) =>
 {
-	// DCL: why does this fail without an ID on the parent 'entity'?
 	return (
 		<entity
 			id={props.id + "parent"}

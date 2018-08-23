@@ -125,7 +125,7 @@ export class StateGoTo extends AnimalState
 		Grid.set(this.animalProps.position);
 		if (lengthSquared(toTarget) > .1)
 		{
-			// DCL: Look past the target.  If this is near targetPosition it may not render
+			// Look past the target
 			this.animalProps.lookAtPosition = add(targetPosition, mul(toTarget, 10));
 		}
 		AnimalStateMachine.changeAnimation(this.animalProps.id, this.inPanic ? Animation.Run : Animation.Walk);
