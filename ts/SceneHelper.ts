@@ -78,10 +78,10 @@ for (let z = 5; z < 15; z += 2)
 }
 for (let z = 5; z < 14; z += 2)
 { // Left
-	//if (z == 11)
-	//{
-	//	continue;
-	//}
+	if (z == 11)
+	{
+		continue;
+	}
 	fenceProps.push({
 		position: { x: 9, y: 0, z },
 		rotation: { x: 0, y: 90, z: 0 }
