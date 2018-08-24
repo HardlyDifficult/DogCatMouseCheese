@@ -1,4 +1,4 @@
-import { Animation, IAnimalProps } from "ts/SharedProperties";
+import { AnimationType, IAnimalProps } from "ts/SharedProperties";
 import { setInterval, clearInterval } from "timers";
 import { EventManager } from "ts/EventManager";
 import { AnimalState } from "ts/StateMachine/AnimalState";
@@ -133,7 +133,7 @@ export namespace AnimalStateMachine
 		animalStates.length--;
 	}
 
-	export function changeAnimation(id: string, animation: Animation)
+	export function changeAnimation(id: string, animation: AnimationType)
 	{
 		const animalState = animalStates.find(s => s.animalProps.id == id);
 		if (!animalState)

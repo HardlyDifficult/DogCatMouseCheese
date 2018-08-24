@@ -21,7 +21,7 @@ export interface IBaitProps
 	baitType: BaitType,
 }
 
-export enum Animation
+export enum AnimationType
 {
 	Idle,
 	Walk,
@@ -45,7 +45,7 @@ export interface IAnimalProps
 	position: Vector3Component,
 	moveDuration: number,
 	lookAtPosition: Vector3Component,
-	animationWeights: { animation: Animation, weight: number }[], // copy
+	animationWeights: { animation: AnimationType, weight: number }[], // copy
 	isDead: boolean,// remove
 	scale: number,
 }

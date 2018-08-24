@@ -1,6 +1,6 @@
 import { Vector3Component } from "metaverse-api";
 import { AnimalState } from "ts/StateMachine/AnimalState";
-import { IAnimalProps, Animation } from "ts/SharedProperties";
+import { IAnimalProps, AnimationType } from "ts/SharedProperties";
 import { setInterval, clearInterval } from "timers";
 import { subtract, isZero, add, div, equals, lengthSquared, mul } from "ts/MathHelper";
 import { AnimalStateMachine } from "ts/StateMachine/AnimalStateMachine";
@@ -111,7 +111,7 @@ export class StateGoTo extends AnimalState
 		const toTarget = subtract(targetPosition, this.animalProps.position);
 		if (isZero(toTarget))
 		{ // Already there
-			AnimalStateMachine.changeAnimation(this.animalProps.id, Animation.Idle);
+			AnimalStateMachine.changeAnimation(this.animalProps.id, AnimationType.Idle);
 			return;
 		}
 
@@ -128,7 +128,7 @@ export class StateGoTo extends AnimalState
 			// Look past the target
 			this.animalProps.lookAtPosition = add(targetPosition, mul(toTarget, 10));
 		}
-		AnimalStateMachine.changeAnimation(this.animalProps.id, this.inPanic ? Animation.Run : Animation.Walk);
+		AnimalStateMachine.changeAnimation(this.animalProps.id, this.inPanic ? AnimationType.Run : AnimationType.Walk);
 	}
 
 	processMessage(message: string): boolean

@@ -1,5 +1,5 @@
 import * as DCL from 'metaverse-api'
-import { IAnimalProps, Animation } from '../ts/SharedProperties';
+import { IAnimalProps, AnimationType } from '../ts/SharedProperties';
 
 export const Mouse = (props: IAnimalProps) =>
 {
@@ -28,23 +28,23 @@ export const Mouse = (props: IAnimalProps) =>
 					//},
 					{
 						clip: "Walking",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Walk) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Walk) || { weight: 0 }).weight
 					},
 					{
 						clip: "Running",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Run) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Run) || { weight: 0 }).weight
 					},
 					{
 						clip: "Sitting",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Sit) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Sit) || { weight: 0 }).weight
 					},
 					{
 						clip: "Eating",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || { weight: 0 }).weight + (props.animationWeights.find(a => a.animation == Animation.Sit) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Drink) || { weight: 0 }).weight + (props.animationWeights.find(a => a.animation == AnimationType.Sit) || { weight: 0 }).weight
 					},
 					{
 						clip: "Deaded",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Dead) || { weight: 0 }).weight,
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Dead) || { weight: 0 }).weight,
 					}
 				]}
 				transition={{

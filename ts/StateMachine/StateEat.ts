@@ -1,6 +1,6 @@
 import { AnimalState } from "ts/StateMachine/AnimalState";
 import { AnimalStateMachine } from "ts/StateMachine/AnimalStateMachine";
-import { Animation, IAnimalProps } from "ts/SharedProperties";
+import { AnimationType, IAnimalProps } from "ts/SharedProperties";
 import { lengthSquared, subtract } from "ts/MathHelper";
 import { StateGoTo, IStateGoToConfig } from "ts/StateMachine/StateGoTo";
 import { EventManager } from "ts/EventManager";
@@ -63,10 +63,10 @@ export class StateEat extends AnimalState
 			this.animalProps.lookAtPosition = this.prey.position;
 			EventManager.emit("renderAnimals");
 			this.animate([
-				{ animation: Animation.Drink, for: 1500 },
-				{ animation: Animation.Idle, for: 500 },
-				{ animation: Animation.Sit, for: 2000 },
-				{ animation: Animation.Idle, for: 500 },
+				{ animation: AnimationType.Drink, for: 1500 },
+				{ animation: AnimationType.Idle, for: 500 },
+				{ animation: AnimationType.Sit, for: 2000 },
+				{ animation: AnimationType.Idle, for: 500 },
 			], () =>
 				{
 					AnimalStateMachine.popState(this.animalProps.id);

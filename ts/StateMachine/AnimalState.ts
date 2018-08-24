@@ -1,4 +1,4 @@
-import { Animation, IAnimalProps } from "ts/SharedProperties";
+import { AnimationType, IAnimalProps } from "ts/SharedProperties";
 import { AnimalStateMachine } from "ts/StateMachine/AnimalStateMachine";
 import { setTimeout, clearTimeout } from "timers";
 
@@ -30,7 +30,7 @@ export class AnimalState
 		return false;
 	}
 
-	animate(steps: { animation: Animation, for: number }[], then: () => void, stepNumber: number = 0)
+	animate(steps: { animation: AnimationType, for: number }[], then: () => void, stepNumber: number = 0)
 	{
 		if (stepNumber >= steps.length)
 		{

@@ -7,7 +7,7 @@ import { Cat } from 'components/Cat';
 import { Mouse } from 'components/Mouse';
 import { Cheese } from 'components/Cheese';
 import { Entrance } from 'components/Entrance';
-import { IAnimalProps, ISceneryProps, AnimalType, Animation, IBaitProps, BaitType } from 'ts/SharedProperties';
+import { IAnimalProps, ISceneryProps, AnimalType, AnimationType, IBaitProps, BaitType } from 'ts/SharedProperties';
 import { Exit } from 'components/Exit';
 import { Tree } from 'components/Tree';
 import { House } from 'components/House';
@@ -232,12 +232,12 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			lookAtPosition,
 			moveDuration,
 			animationWeights: [
-				{ animation: Animation.Idle, weight: 1 },
-				{ animation: Animation.Walk, weight: 0 },
-				{ animation: Animation.Drink, weight: 0 },
-				{ animation: Animation.Dead, weight: 0 },
-				{ animation: Animation.Run, weight: 0 },
-				{ animation: Animation.Sit, weight: 0 },
+				{ animation: AnimationType.Idle, weight: 1 },
+				{ animation: AnimationType.Walk, weight: 0 },
+				{ animation: AnimationType.Drink, weight: 0 },
+				{ animation: AnimationType.Dead, weight: 0 },
+				{ animation: AnimationType.Run, weight: 0 },
+				{ animation: AnimationType.Sit, weight: 0 },
 			],
 			isDead: false,
 			scale: 1,

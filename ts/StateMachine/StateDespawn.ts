@@ -1,5 +1,5 @@
 import { AnimalState } from "ts/StateMachine/AnimalState";
-import { IAnimalProps, Animation } from "ts/SharedProperties";
+import { IAnimalProps, AnimationType } from "ts/SharedProperties";
 import { EventManager } from "ts/EventManager";
 
 export interface IStateDespawnConfig
@@ -20,7 +20,7 @@ export class StateDespawn extends AnimalState
 
 	start()
 	{
-		this.animate([{ animation: Animation.Dead, for: this.config.delay || 0 }], () => this.despawn());
+		this.animate([{ animation: AnimationType.Dead, for: this.config.delay || 0 }], () => this.despawn());
 	}
 
 	despawn()
