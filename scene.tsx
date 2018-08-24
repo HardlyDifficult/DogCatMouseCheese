@@ -62,7 +62,7 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 		this.eventSubscriber.on("Exit_click", e => this.onExitClick());
 
 		this.eventSubscriber.on('renderAnimals', e => this.onRenderAnimals());
-		this.eventSubscriber.on('captureCheese', e => this.onCaptureBait());
+		this.eventSubscriber.on('captureBait', e => this.onCaptureBait());
 		this.eventSubscriber.on('despawn', (animalId, delay) => this.onDespawn(animalId, delay));
 		this.eventSubscriber.on('gridCellSet', cell => this.onGridCellSet(cell));
 	}

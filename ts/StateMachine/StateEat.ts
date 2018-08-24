@@ -58,7 +58,7 @@ export class StateEat extends AnimalState
 			}
 			else
 			{
-				EventManager.emit("captureCheese", this.prey.id, 1000);
+				EventManager.emit("captureBait", this.prey.id, 1000);
 			}
 			this.animalProps.lookAtPosition = this.prey.position;
 			EventManager.emit("renderAnimals");
