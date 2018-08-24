@@ -111,8 +111,13 @@ export namespace AnimalStateMachine
 		}
 		while (!animalState.stateStack[animalState.stateStack.length - 1].processMessage(message))
 		{
-			popState(objectId);
+			const previousState = animalState.stateStack.pop();
+			if(previousState)
+			{
+				previousState.stop();
+			}
 		}
+		animalState.stateStack[animalState.stateStack.length - 1].start();
 	}
 
 	export function terminate(objectId: string)

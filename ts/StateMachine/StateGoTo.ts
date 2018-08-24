@@ -31,11 +31,6 @@ export class StateGoTo extends AnimalState
 		this.target = target;
 		this.config = config;
 		this.blockedConfig = blockedConfig;
-
-		if (!(this.config.moveSpeed > 0))
-		{
-			throw new Error("You can't walk that fast");
-		}
 	}
 
 	start()
@@ -62,6 +57,10 @@ export class StateGoTo extends AnimalState
 		}
 
 		let pathIndex = 1;
+		if (this.interval)
+		{
+			clearInterval(this.interval);
+		}
 		this.interval = setInterval(() =>
 		{
 			let target = path[pathIndex];

@@ -12,10 +12,7 @@ export class AnimalState
 		this.animalProps = animal;
 	}
 
-	start(): void
-	{
-
-	}
+	start(): void { }
 
 	stop(): void
 	{
