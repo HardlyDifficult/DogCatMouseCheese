@@ -243,11 +243,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 			scale: 1,
 		};
 		this.setState({ animals: [...this.state.animals, animal] });
-		this.eventSubscriber.on(animal.id + "_click", () =>
-		{
-			AnimalStateMachine.sendMessage(animal.id, "click");
-		});
-
 		return animal;
 	}
 
