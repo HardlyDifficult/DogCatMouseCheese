@@ -147,7 +147,7 @@ export namespace Grid
 			{
 				return JSON.stringify(x);
 			},
-			timeout: 5
+			timeout: 10
 		});
 		if (results.status == "success")
 		{
