@@ -1,5 +1,5 @@
 import * as DCL from 'metaverse-api'
-import { IAnimalProps, Animation } from '../ts/SharedProperties';
+import { IAnimalProps, AnimationType } from '../ts/SharedProperties';
 
 export const Dog = (props: IAnimalProps) =>
 {
@@ -24,19 +24,19 @@ export const Dog = (props: IAnimalProps) =>
 				skeletalAnimation={[
 					{
 						clip: "Idle",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Idle) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Idle) || { weight: 0 }).weight
 					},
 					{
 						clip: "Walking",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Walk) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Walk) || { weight: 0 }).weight
 					},
 					{
 						clip: "Sitting",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Sit) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Sit) || { weight: 0 }).weight
 					},
 					{
 						clip: "Drinking",
-						weight: (props.animationWeights.find(a => a.animation == Animation.Drink) || { weight: 0 }).weight
+						weight: (props.animationWeights.find(a => a.animation == AnimationType.Drink) || { weight: 0 }).weight
 					},
 				]}
 				transition={{
