@@ -59,7 +59,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 
 		this.eventSubscriber.on("Entrance_click", e => this.onEntranceClick());
 		this.eventSubscriber.on("House_click", e => this.onHouseClick());
-		this.eventSubscriber.on("Exit_click", e => this.onExitClick());
 
 		this.eventSubscriber.on('renderAnimals', e => this.onRenderAnimals());
 		this.eventSubscriber.on('captureBait', e => this.onCaptureBait());
@@ -147,18 +146,6 @@ export default class DogCatMouseCheese extends DCL.ScriptableScene
 				config.predator.patrolConfig
 			));
 		}
-	}
-	onExitClick()
-	{ // Reset the scene
-		for (const animal of this.state.animals.slice())
-		{
-			EventManager.emit("despawn", animal.id);
-		}
-		for (const tree of this.state.trees)
-		{
-			Grid.clear(tree.position);
-		}
-		this.spawnTrees();
 	}
 	onRenderAnimals()
 	{
